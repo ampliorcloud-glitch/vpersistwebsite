@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>vPersist | For Employers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-container": "#91a8ff",
+                        "secondary-fixed-dim": "#4fdbc8",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-fixed": "#dce1ff",
+                        "on-secondary-fixed-variant": "#005048",
+                        "tertiary-container": "#5c3800",
+                        "inverse-primary": "#b6c4ff",
+                        "primary": "#002270",
+                        "on-background": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "on-surface-variant": "#444651",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c5c5d3",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed": "#71f8e4",
+                        "on-tertiary-container": "#ef9900",
+                        "on-primary-fixed-variant": "#274191",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffddb8",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#4159aa",
+                        "secondary-container": "#6df5e1",
+                        "on-secondary": "#ffffff",
+                        "outline": "#757682",
+                        "primary-container": "#1f3a8a",
+                        "on-surface": "#0b1c30",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-error-container": "#93000a",
+                        "background": "#f8f9ff",
+                        "on-secondary-container": "#006f64",
+                        "on-secondary-fixed": "#00201c",
+                        "tertiary": "#3e2400",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00164f",
+                        "secondary": "#006b5f"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .revenue-glow {
+            box-shadow: 0px 24px 48px rgba(11, 28, 48, 0.06);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #002270 0%, #1f3a8a 100%);
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-header shadow-[0px_24px_48px_rgba(11,28,48,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<span class="text-2xl font-black tracking-tighter text-blue-900 dark:text-white">vPersist</span>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Staffing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Setup</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Services</a>
+<a class="text-blue-900 dark:text-blue-200 border-b-2 border-blue-900 font-bold pb-1 font-sans tracking-tight text-sm transition-all duration-300" href="#">Employers</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Academy</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">About</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden lg:block px-5 py-2 text-sm font-bold text-blue-900 hover:opacity-80 transition-all">Talk to Team</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-md font-bold text-sm hover:opacity-90 transition-all scale-95 active:duration-75 shadow-lg">Start 3-Month Pilot</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 py-24 md:py-32 overflow-hidden bg-surface-bright">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase bg-secondary-container text-on-secondary-container rounded-full">For Ambitious Employers</span>
+<h1 class="text-5xl md:text-7xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8">
+                        Not Ready for <br/>Long-Term Hiring? <span class="text-primary-container">Start with a Pilot.</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-xl">
+                        Scale your revenue operations without the risk of permanent overhead. Test markets, validate ROIs, and build high-performance teams with our architectural approach to staffing.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="hero-gradient text-on-primary px-8 py-4 rounded-md font-bold text-lg revenue-glow hover:opacity-90 transition-all">
+                            Talk to Our Team
+                        </button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-md font-bold text-lg hover:bg-surface-container-high transition-all">
+                            View Pilot Packages
+                        </button>
+</div>
+</div>
+<div class="relative">
+<!-- Architectural System Visual -->
+<div class="relative aspect-square w-full">
+<div class="absolute inset-0 bg-primary-container rounded-3xl rotate-3 opacity-10"></div>
+<div class="absolute inset-0 bg-secondary rounded-3xl -rotate-3 opacity-5"></div>
+<div class="relative h-full w-full p-8 flex items-center justify-center">
+<div class="grid grid-cols-2 gap-4 w-full h-full">
+<div class="bg-surface-container-lowest p-6 rounded-xl revenue-glow border-l-4 border-secondary flex flex-col justify-end">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">insights</span>
+<div class="text-2xl font-black tracking-tight leading-none">ROI Validation</div>
+</div>
+<div class="bg-primary-container p-6 rounded-xl revenue-glow flex flex-col justify-end">
+<span class="material-symbols-outlined text-4xl text-on-primary-container mb-4">speed</span>
+<div class="text-2xl font-black tracking-tight leading-none text-white">Rapid Setup</div>
+</div>
+<div class="col-span-2 bg-surface-container-low p-6 rounded-xl revenue-glow border-t-4 border-primary flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-primary">groups</span>
+<div class="text-right">
+<div class="text-xs font-bold text-outline uppercase tracking-widest">Efficiency</div>
+<div class="text-xl font-bold text-primary">+42% Growth</div>
+</div>
+</div>
+<div class="text-3xl font-black tracking-tight leading-none">Revenue Staffing Architecture</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Your Situation Section (Asymmetric Editorial) -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-6">Your Situation</h2>
+<p class="text-lg text-on-surface-variant font-medium">Traditional hiring is slow and risky. We specialize in the high-stakes phase where you need execution today, not promises for next quarter.</p>
+</div>
+<div class="hidden md:block h-px bg-outline-variant flex-grow mx-12 mb-4 opacity-30"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<!-- Situation 1 -->
+<div class="flex flex-col gap-6">
+<div class="text-6xl font-black text-surface-container-highest tracking-tighter opacity-50">01</div>
+<h3 class="text-2xl font-black tracking-tight">Unsure ROI</h3>
+<p class="text-on-surface-variant leading-relaxed">You know you need growth, but committing to a full-time senior SDR or demand gen lead before the model is proven feels like a gamble.</p>
+</div>
+<!-- Situation 2 -->
+<div class="flex flex-col gap-6 pt-12 md:pt-24">
+<div class="text-6xl font-black text-surface-container-highest tracking-tighter opacity-50">02</div>
+<h3 class="text-2xl font-black tracking-tight">Testing New Markets</h3>
+<p class="text-on-surface-variant leading-relaxed">Entering a new vertical or geography requires speed. You need a veteran team that can execute the "Go-to-Market" without the overhead.</p>
+</div>
+<!-- Situation 3 -->
+<div class="flex flex-col gap-6">
+<div class="text-6xl font-black text-surface-container-highest tracking-tighter opacity-50">03</div>
+<h3 class="text-2xl font-black tracking-tight">Building from Scratch</h3>
+<p class="text-on-surface-variant leading-relaxed">You’re scaling from 0 to 1. You don't just need a person; you need the infrastructure, the playbooks, and the talent all at once.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Solutions (Bento Grid) -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-4">Precision Solutions</h2>
+<p class="text-on-surface-variant font-medium">Modular approaches to revenue growth staffing.</p>
+</div>
+<div class="grid md:grid-cols-12 gap-6">
+<!-- Solution 1: Pilot (High Urgency) -->
+<div class="md:col-span-7 bg-primary-container text-on-primary rounded-xl p-10 flex flex-col justify-between min-h-[450px] group hover:scale-[1.01] transition-transform duration-500">
+<div>
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-5xl text-secondary-fixed">rocket_launch</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1 text-xs font-black rounded-full tracking-widest uppercase">Most Requested</span>
+</div>
+<h3 class="text-4xl font-black tracking-tight mb-6 leading-none">3-Month Pilot</h3>
+<p class="text-blue-200 text-lg max-w-md mb-8">The ultimate de-risking tool. We deploy a full-stack revenue cell into your business for 90 days. We find the signal, you keep the results.</p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span> Immediate execution capability</li>
+<li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span> Weekly performance blueprints</li>
+<li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span> No long-term contractual lock-in</li>
+</ul>
+</div>
+<button class="bg-secondary-fixed text-on-secondary-fixed w-full py-4 rounded font-bold text-lg hover:bg-secondary-container transition-colors">Apply for a Pilot</button>
+</div>
+<!-- Solution 2: Demand Gen -->
+<div class="md:col-span-5 bg-surface-container-low rounded-xl p-10 flex flex-col justify-between border-l-8 border-primary group hover:bg-surface-container transition-colors">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">hub</span>
+<h3 class="text-2xl font-black tracking-tight mb-4">Full Demand Gen Setup</h3>
+<p class="text-on-surface-variant mb-6">We don't just provide bodies; we provide the brain. We build your entire outbound and inbound revenue machine from the ground up.</p>
+<div class="space-y-4 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span class="text-sm font-bold">Tech Stack</span>
+<span class="text-sm">Integrated</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span class="text-sm font-bold">Messaging</span>
+<span class="text-sm">Optimized</span>
+</div>
+</div>
+</div>
+<div class="pt-10">
+<a class="text-primary font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">
+                                Explore Setup Details <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Solution 3: Ongoing Staffing -->
+<div class="md:col-span-12 bg-surface-container-highest rounded-xl p-12 overflow-hidden relative">
+<div class="grid md:grid-cols-2 gap-12 items-center z-10 relative">
+<div>
+<h3 class="text-3xl font-black tracking-tight mb-6">Ongoing Revenue Staffing</h3>
+<p class="text-lg text-on-surface-variant mb-8">Once the pilot proves successful, seamlessly transition to a permanent or long-term embedded team model. We handle recruitment, training, and management.</p>
+<div class="flex gap-4">
+<span class="bg-surface-container-lowest px-4 py-2 rounded font-bold text-sm revenue-glow">Account Executives</span>
+<span class="bg-surface-container-lowest px-4 py-2 rounded font-bold text-sm revenue-glow">SDRs/BDRs</span>
+<span class="bg-surface-container-lowest px-4 py-2 rounded font-bold text-sm revenue-glow">RevOps</span>
+</div>
+</div>
+<div class="hidden md:block">
+<img class="w-full h-64 object-cover rounded-xl revenue-glow" data-alt="Modern workspace with diverse professionals collaborating around a large digital dashboard showing sales growth metrics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFEm3aFfwMK21hotKiQFI0j3UIe0QqbewBJuPz3sTbnYTpBuiS82wBluyTEM65ihS6tbgXpIMoMmUATCkn5ycVNFCAzj9ZKLd1HD5aXSciVFLZ1gA1DhC5WjkqVtIz675Qd7GFxnhoZE8go2ZSVym79ZPOWob9aOm4p5j60i2NGNeh2A9aENWVL7nrut5P4g3L--i9Uz1U3srX879kwhnkJaK3_mmKCPhx8r26UjUzs_H7GoC4zUlaTNjZ97qZdjo60lDmUblR-aE2"/>
+</div>
+</div>
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-9xl text-primary opacity-5 select-none -translate-y-12 translate-x-12">engineering</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-4xl mx-auto px-8 text-center">
+<div class="p-12 md:p-20 bg-surface-bright rounded-2xl revenue-glow relative overflow-hidden">
+<div class="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-tight">Ready to test your <br/><span class="text-secondary">revenue engine?</span></h2>
+<p class="text-xl text-on-surface-variant mb-12">Schedule a 15-minute diagnostic call with our staffing architects to determine if a pilot is right for your current stage.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-md font-bold text-lg hover:opacity-90 transition-all shadow-xl">
+                            Talk to Our Team
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full rounded-none">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div>
+<div class="text-xl font-black text-blue-900 dark:text-white mb-6">vPersist</div>
+<p class="body-lg font-sans leading-relaxed text-slate-600">Architecting high-performance revenue teams for the next generation of growth companies.</p>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 dark:text-blue-400 mb-6 uppercase tracking-widest text-xs">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Staffing Solutions</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Pilot Program</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Case Studies</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 dark:text-blue-400 mb-6 uppercase tracking-widest text-xs">Core Differentiation</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Zero Risk Models</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Embedded Ops</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Talent Academy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 dark:text-blue-400 mb-6 uppercase tracking-widest text-xs">Contact</h4>
+<ul class="space-y-4">
+<li class="text-slate-500">San Francisco, CA</li>
+<li class="text-slate-500">hello@vpersist.com</li>
+<li class="flex gap-4 mt-6">
+<span class="material-symbols-outlined text-slate-500 hover:text-blue-900 cursor-pointer">share</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-blue-900 cursor-pointer">alternate_email</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="px-8 py-8 border-t border-slate-200 dark:border-slate-800 max-w-7xl mx-auto">
+<p class="text-slate-500 text-sm text-center md:text-left">© 2024 vPersist. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

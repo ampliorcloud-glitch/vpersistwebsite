@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors - vPersist Precision Architect */
+  --color-primary: #002270;
+  --color-secondary: #006b5f;
+  --color-tertiary: #ef9900;
+  
+  /* Backgrounds & Surfaces (Tonal Layering instead of Lines) */
+  --color-background: #f8f9ff;
+  --color-surface-low: #eff4ff;
+  --color-surface-high: #d3e4fe;
+  
+  /* Text */
+  --color-text-main: #0b1c30;
+  --color-text-muted: #444651;
+
+  /* Typography Variables */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Custom Shadows (Revenue Glow) */
+  --shadow-revenue: 0px 24px 48px rgba(11, 28, 48, 0.06);
+}
+
+:root {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+}
+
+/* Utilities for Precision Architect Style */
+@utility glass-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+@utility no-line-section {
+  border: none;
+  background-color: var(--color-surface-low);
+}

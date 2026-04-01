@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f8f9ff",
+              "on-primary-container": "#91a8ff",
+              "secondary-fixed-dim": "#4fdbc8",
+              "on-tertiary-fixed-variant": "#653e00",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eaf1ff",
+              "surface": "#f8f9ff",
+              "surface-container-high": "#dce9ff",
+              "surface-container-highest": "#d3e4fe",
+              "primary-fixed": "#dce1ff",
+              "on-secondary-fixed-variant": "#005048",
+              "tertiary-container": "#5c3800",
+              "inverse-primary": "#b6c4ff",
+              "primary": "#002270",
+              "on-background": "#0b1c30",
+              "surface-variant": "#d3e4fe",
+              "surface-dim": "#cbdbf5",
+              "surface-container": "#e5eeff",
+              "on-surface-variant": "#444651",
+              "inverse-surface": "#213145",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#2a1700",
+              "on-error": "#ffffff",
+              "outline-variant": "#c5c5d3",
+              "surface-container-low": "#eff4ff",
+              "secondary-fixed": "#71f8e4",
+              "on-tertiary-container": "#ef9900",
+              "on-primary-fixed-variant": "#274191",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#ffddb8",
+              "primary-fixed-dim": "#b6c4ff",
+              "error-container": "#ffdad6",
+              "surface-tint": "#4159aa",
+              "secondary-container": "#6df5e1",
+              "on-primary": "#ffffff",
+              "outline": "#757682",
+              "primary-container": "#1f3a8a",
+              "on-surface": "#0b1c30",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-error-container": "#93000a",
+              "background": "#f8f9ff",
+              "on-secondary-container": "#006f64",
+              "on-secondary-fixed": "#00201c",
+              "tertiary": "#3e2400",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#00164f",
+              "secondary": "#006b5f"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .revenue-glow {
+        box-shadow: 0px 24px 48px rgba(11, 28, 48, 0.06);
+      }
+      .glass-header {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .diagonal-accent {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-header shadow-[0px_24px_48px_rgba(11,28,48,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-blue-900 dark:text-white">vPersist</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Home</a>
+<a class="text-slate-600 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Staffing</a>
+<a class="text-slate-600 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Setup</a>
+<a class="text-blue-900 border-b-2 border-blue-900 font-bold pb-1 font-sans tracking-tight text-sm transition-all duration-300" href="#">Services</a>
+<a class="text-slate-600 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Employers</a>
+<a class="text-slate-600 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">Academy</a>
+<a class="text-slate-600 hover:text-blue-800 font-sans tracking-tight font-medium text-sm transition-all duration-300" href="#">About</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="hidden lg:block text-blue-900 font-sans tracking-tight font-medium text-sm hover:opacity-80 transition-all">Talk to Team</button>
+<button class="bg-primary bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-md font-sans tracking-tight font-medium text-sm hover:opacity-90 active:scale-95 transition-all">Start 3-Month Pilot</button>
+</div>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8">
+<span class="text-secondary font-bold tracking-widest text-xs uppercase mb-4 block">Engineered Growth</span>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-primary leading-[0.9] mb-8">Modular Revenue Architecture.</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Precision-built service modules designed to integrate seamlessly into your revenue engine. Deploy talent, technology, and strategy with surgical accuracy.
+                    </p>
+</div>
+<div class="lg:col-span-4 pb-4">
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-secondary">
+<p class="text-sm font-medium text-primary mb-2 italic">"The architecture of vPersist allowed us to scale from zero to $2M ARR in six months without hiring a single internal recruiter."</p>
+<p class="text-xs font-bold text-on-surface">— VP Revenue, CloudScale</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Primary NEW Sections: Bento Grid -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- 3-Month Pilot Deployment -->
+<div class="md:col-span-7 bg-primary-container text-white p-12 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-12">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 text-xs font-black rounded">NEW</span>
+<span class="text-secondary-fixed font-bold tracking-widest text-xs">ACCELERATED ONBOARDING</span>
+</div>
+<h2 class="text-4xl font-bold tracking-tight mb-6">3-Month Pilot Deployment</h2>
+<p class="text-on-primary-container text-lg mb-12 max-w-md leading-relaxed">
+                            A high-velocity engagement designed to prove ROI within 90 days. We deploy a full revenue stack—talent, tech, and data—to validate your market hypothesis.
+                        </p>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div>
+<span class="block text-2xl font-black text-white">14 Days</span>
+<span class="text-xs text-on-primary-container uppercase font-bold tracking-widest">Time to Launch</span>
+</div>
+<div>
+<span class="block text-2xl font-black text-white">Full Stack</span>
+<span class="text-xs text-on-primary-container uppercase font-bold tracking-widest">Resource Access</span>
+</div>
+</div>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-md font-bold text-sm hover:translate-x-1 transition-transform flex items-center gap-2">
+                            Request Pilot Framework
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary opacity-20 rounded-full blur-3xl"></div>
+</div>
+<!-- Demand Generation Setup -->
+<div class="md:col-span-5 bg-surface-container-highest p-12 rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-12">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 text-xs font-black rounded">NEW</span>
+<span class="text-primary font-bold tracking-widest text-xs">STRATEGIC LAYER</span>
+</div>
+<h2 class="text-4xl font-bold tracking-tight text-primary mb-6">Demand Gen Setup</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                            We architect your outbound and inbound channels from the ground up. Custom data scrapers, personalized messaging at scale, and automated sequence logic.
+                        </p>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-sm font-medium text-primary">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            ICP &amp; Persona Mapping
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-primary">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Multi-Channel Sequence Design
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-primary">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            CRM Integration &amp; Lead Routing
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Refined Services: The Modular Grid -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-secondary font-bold tracking-widest text-xs uppercase mb-2 block">Service Modules</span>
+<h2 class="text-5xl font-black tracking-tighter text-primary">Precision Components.</h2>
+</div>
+<p class="text-on-surface-variant max-w-xs text-sm">
+                    Select the specific modules your organization requires. No bloat, only performance.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-outline-variant/20">
+<!-- Revenue Talent Deployment -->
+<div class="p-10 border-r border-b border-outline-variant/20 bg-white hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="groups">groups</span>
+<h3 class="text-xl font-bold text-primary mb-4">Revenue Talent Deployment</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Vetted SDRs, AEs, and CSMs deployed directly into your workflows. High-performance personnel without the overhead.</p>
+<div class="h-1 w-12 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+<!-- Supervision & QC -->
+<div class="p-10 border-r border-b border-outline-variant/20 bg-white hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="verified_user">verified_user</span>
+<h3 class="text-xl font-bold text-primary mb-4">Supervision &amp; QC</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Rigorous quality control systems. We monitor calls, emails, and data entry to ensure 100% adherence to your brand standards.</p>
+<div class="h-1 w-12 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+<!-- Data Support -->
+<div class="p-10 border-r border-b border-outline-variant/20 bg-white hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="database">database</span>
+<h3 class="text-xl font-bold text-primary mb-4">Data Support</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Custom lead list building and data enrichment. We find the hard-to-reach decision makers your competitors miss.</p>
+<div class="h-1 w-12 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+<!-- Tech Layer -->
+<div class="p-10 border-r border-b border-outline-variant/20 bg-white hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="layers">layers</span>
+<h3 class="text-xl font-bold text-primary mb-4">Tech Layer</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Implementation of best-in-class sales tech stacks. Automated outreach, AI transcription, and real-time reporting.</p>
+<div class="h-1 w-12 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+<!-- Recruitment -->
+<div class="p-10 border-r border-b border-outline-variant/20 bg-white hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="person_search">person_search</span>
+<h3 class="text-xl font-bold text-primary mb-4">Recruitment</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">We handle the heavy lifting of identifying and pre-screening top 1% talent for your permanent revenue roles.</p>
+<div class="h-1 w-12 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+<!-- Training -->
+<div class="p-10 border-r border-b border-outline-variant/20 bg-white hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="school">school</span>
+<h3 class="text-xl font-bold text-primary mb-4">Training</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Ongoing education for your revenue team. Modern sales methodologies and objection handling for high-ticket B2B.</p>
+<div class="h-1 w-12 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+</section>
+<!-- Content Visual Section -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="aspect-square bg-surface-container-high rounded-2xl overflow-hidden shadow-2xl relative">
+<img alt="Revenue Architecture" class="object-cover w-full h-full mix-blend-overlay opacity-50" data-alt="Modern tech office with blue glass partitions and architectural lines showing professionals working on high-performance revenue strategy dashboards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWjNHtuP23hTmJPcEWKSoEl9Cvcyj1xpqI1ILtssVTBtlq6RN76BE0MhQTKC9SzZEKpMcnzdyxtMaLxNZsTAT3uhkaSSeSyW0-QhTwVVoPNYgHQZVgOmYxBbnztfwWmT3hGSswFxk2-EdbwicQkbBnXieoGuTzSz4XY5kcghCrCGcgc9xwmRz-ZAcVdGGXY9w2A3QABFDZpZzSJUddqbjwNrCFg1OZsVpdAzoxkcl4H0gMRJTOncrFSz5COuGcNXx5flCZ70RimQaW"/>
+<div class="absolute inset-0 p-12 flex flex-col justify-between">
+<div class="flex gap-4">
+<div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<div class="w-16 h-16 bg-secondary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+</div>
+</div>
+<div class="bg-white/90 backdrop-blur p-8 rounded-lg">
+<h4 class="text-2xl font-bold text-primary mb-2">Architectural Logic</h4>
+<p class="text-on-surface-variant text-sm">Every module is built to interact. Your tech layer feeds your data support, which fuels your talent deployment.</p>
+</div>
+</div>
+</div>
+<div class="absolute -z-10 -top-8 -left-8 w-full h-full bg-surface-container rounded-2xl"></div>
+</div>
+<div>
+<h2 class="text-5xl font-black tracking-tighter text-primary mb-8">Zero-Friction Integration.</h2>
+<p class="text-lg text-on-surface-variant mb-12 leading-relaxed">
+                        We don't replace your existing systems—we enhance them. vPersist acts as a plug-and-play revenue engine that sits alongside your current leadership.
+                    </p>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="text-secondary font-black text-4xl">01</div>
+<div>
+<h4 class="font-bold text-primary text-xl mb-2">Identify the Gap</h4>
+<p class="text-on-surface-variant text-sm">Our architects analyze your current revenue funnel to pinpoint the specific modules needed for maximum impact.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="text-secondary font-black text-4xl">02</div>
+<div>
+<h4 class="font-bold text-primary text-xl mb-2">Deploy the Module</h4>
+<p class="text-on-surface-variant text-sm">We launch your selected modules within 14 days, fully integrated into your CRM and communications stack.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="text-secondary font-black text-4xl">03</div>
+<div>
+<h4 class="font-bold text-primary text-xl mb-2">Optimize and Scale</h4>
+<p class="text-on-surface-variant text-sm">Continuous feedback loops and QC ensure the output only gets stronger over time.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="bg-primary p-16 md:p-24 rounded-none md:rounded-3xl text-center relative overflow-hidden">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter text-white mb-8">Ready to architect your revenue future?</h2>
+<p class="text-on-primary-container text-xl mb-12">Schedule a strategic consultation to see which vPersist modules fit your growth profile.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-10 py-5 rounded-md font-bold text-lg hover:scale-105 active:scale-95 transition-all">Talk to Our Team</button>
+<button class="border-2 border-on-primary-container text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/10 transition-all">View Case Studies</button>
+</div>
+</div>
+<!-- Abstract visual elements -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary opacity-10 blur-3xl -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-container opacity-20 blur-3xl -ml-48 -mb-48"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-black text-blue-900 dark:text-white">vPersist</div>
+<p class="body-lg font-sans leading-relaxed text-slate-600">The premier architectural partner for B2B revenue performance. Engineered for excellence.</p>
+</div>
+<div>
+<h4 class="text-blue-900 dark:text-blue-400 font-bold mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Home</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Services</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Employers</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Academy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-blue-900 dark:text-blue-400 font-bold mb-6">Core Differentiation</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">The 3-Month Pilot</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Quality Control Layer</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Tech Stack Audit</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Talent Vetting</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-blue-900 dark:text-blue-400 font-bold mb-6">Contact</h4>
+<p class="text-slate-500 mb-4">partners@vpersist.com</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">language</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">share</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">mail</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200">
+<p class="text-slate-400 text-sm">© 2024 vPersist. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

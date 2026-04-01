@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Revenue Staffing | vPersist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#f8f9ff",
+              "on-background": "#0b1c30",
+              "surface-variant": "#d3e4fe",
+              "surface-container": "#e5eeff",
+              "surface-container-low": "#eff4ff",
+              "on-secondary-container": "#006f64",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-error": "#ffffff",
+              "surface-container-high": "#dce9ff",
+              "on-surface-variant": "#444651",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#00164f",
+              "secondary-fixed-dim": "#4fdbc8",
+              "tertiary": "#3e2400",
+              "primary-fixed-dim": "#b6c4ff",
+              "inverse-surface": "#213145",
+              "primary": "#002270",
+              "surface-container-highest": "#d3e4fe",
+              "primary-container": "#1f3a8a",
+              "on-tertiary-container": "#ef9900",
+              "outline-variant": "#c5c5d3",
+              "error": "#ba1a1a",
+              "surface": "#f8f9ff",
+              "secondary-fixed": "#71f8e4",
+              "inverse-primary": "#b6c4ff",
+              "tertiary-fixed": "#ffddb8",
+              "inverse-on-surface": "#eaf1ff",
+              "outline": "#757682",
+              "on-secondary-fixed-variant": "#005048",
+              "secondary-container": "#6df5e1",
+              "surface-dim": "#cbdbf5",
+              "surface-bright": "#f8f9ff",
+              "on-primary-fixed-variant": "#274191",
+              "on-error-container": "#93000a",
+              "on-surface": "#0b1c30",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#91a8ff",
+              "tertiary-container": "#5c3800",
+              "primary-fixed": "#dce1ff",
+              "on-tertiary-fixed-variant": "#653e00",
+              "on-secondary-fixed": "#00201c",
+              "on-primary": "#ffffff",
+              "secondary": "#006b5f",
+              "surface-tint": "#4159aa",
+              "on-tertiary-fixed": "#2a1700"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+      }
+      body {
+        background-color: #f8f9ff;
+        color: #0b1c30;
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0px_24px_48px_rgba(11,28,48,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-blue-900 dark:text-white">vPersist</div>
+<div class="hidden md:flex items-center space-x-8 font-sans tracking-tight font-medium text-sm">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 transition-all duration-300" href="#">Home</a>
+<a class="text-blue-900 dark:text-blue-200 border-b-2 border-blue-900 font-bold pb-1 transition-all duration-300" href="#">Staffing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 transition-all duration-300" href="#">Setup</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 transition-all duration-300" href="#">Services</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 transition-all duration-300" href="#">Employers</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 transition-all duration-300" href="#">Academy</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 transition-all duration-300" href="#">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 transition-all duration-300" href="#">Contact Us</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden lg:block text-blue-900 dark:text-blue-400 font-medium text-sm px-4 py-2 hover:opacity-80 transition-all">Talk to Team</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg hover:opacity-90 active:scale-95 transition-all">Start 3-Month Pilot</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface pt-16 pb-24 md:pt-24 md:pb-32">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="inline-flex items-center space-x-2 bg-surface-container-highest px-4 py-1.5 rounded-full mb-8">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Start with a 3-Month Pilot</span>
+</div>
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h1 class="text-5xl md:text-7xl font-headline font-black tracking-tight text-primary leading-[1.1] mb-8">
+                        vPersist Revenue Staffing
+                    </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-10 max-w-xl">
+                        Deploy trained revenue talent with flexible engagement options. Scale your outbound and inbound operations without the overhead of traditional hiring.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:opacity-95 transition-all flex items-center justify-center group">
+                            Start Your Pilot
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-lg font-bold text-lg hover:bg-surface-container-high transition-all">
+                            View Case Studies
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-gradient-to-br from-primary to-primary-container rounded-3xl overflow-hidden shadow-2xl relative group">
+<img alt="High-performance staffing" class="w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="Modern high-performance office environment with team collaborating around data screens in a sleek glass architectural setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1YEzqTF37aQy_Wml1HhgdcQypAraXdNYjRTwMZV5OQyd_ztXc6jvI7AszZhZXmiMyHcKMX-q_E07fNQ85Vo7phyA2oIV9XE7rczxxIg_UUtjYoNbyLefRQJqb9eLXNHC2BwKPK9ly8TyTRwDFSdpB4nbAfE5-ciMNtQUAuv4UjUJU_OvMnqrURDQ2IG6Jp5AFKgze5MkJBJ1qlfvzp4TMH5dEygly-THwl4_KLM59Yot5mHdOkbYX4NkHSHPNWY_I_scGtIIh_5k-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20">
+<div class="flex items-center space-x-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-weight="fill">verified_user</span>
+</div>
+<div>
+<div class="text-white font-bold">98% Success Rate</div>
+<div class="text-white/70 text-sm">Pilot-to-Deployment Transition</div>
+</div>
+</div>
+<div class="h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[98%]"></div>
+</div>
+</div>
+</div>
+<!-- Asymmetric Decorative Elements -->
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-tertiary-fixed opacity-30 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-secondary opacity-10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Model Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<h2 class="text-3xl md:text-5xl font-headline font-black text-primary mb-4 tracking-tight">Choose Your Level of Support</h2>
+<p class="text-on-surface-variant text-lg">Architect your team based on operational maturity and internal bandwidth.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Option 1: Talent Only -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border-b-4 border-transparent hover:border-secondary group">
+<div class="w-14 h-14 bg-surface-container rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-secondary-container text-3xl">person_add</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">1. Talent Only</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                        Experienced revenue professionals ready to plug into your existing workflows and tools.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Vetted Revenue Specialists</span>
+</li>
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Direct Reporting Line</span>
+</li>
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Fast Integration</span>
+</li>
+</ul>
+</div>
+<!-- Option 2: Talent + QC -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border-b-4 border-transparent hover:border-secondary group relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-lg">Recommended</div>
+<div class="w-14 h-14 bg-surface-container rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-secondary-container text-3xl">verified</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">2. Talent + Supervision</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                        Includes a dedicated Quality Control manager ensuring output consistency and performance.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Weekly Performance Audits</span>
+</li>
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Automated QC Reporting</span>
+</li>
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Escalation Management</span>
+</li>
+</ul>
+</div>
+<!-- Option 3: Talent + QC + Data -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border-b-4 border-transparent hover:border-secondary group">
+<div class="w-14 h-14 bg-surface-container rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-secondary-container text-3xl">insights</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">3. Full Ecosystem</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                        The complete package: trained talent, QC, and full access to our revenue data stack.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Premium Data &amp; Leads</span>
+</li>
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>vPersist Tool Stack</span>
+</li>
+<li class="flex items-start space-x-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Strategic Revenue Planning</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Engagement Options Section -->
+<section class="py-24 bg-surface relative">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-3xl md:text-5xl font-headline font-black text-primary mb-6 tracking-tight">Flexible Engagement Framework</h2>
+<p class="text-on-surface-variant text-lg">Designed to evolve from a rapid proof-of-concept to a sustained growth engine.</p>
+</div>
+<div>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-10 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-tertiary-fixed/20 transition-all flex items-center">
+                        Start Your Pilot
+                        <span class="material-symbols-outlined ml-2">rocket_launch</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-separate border-spacing-y-4">
+<thead>
+<tr class="text-left text-on-surface-variant/60 font-bold uppercase tracking-widest text-[10px]">
+<th class="px-8 pb-4">Engagement Tier</th>
+<th class="px-8 pb-4">Primary Goal</th>
+<th class="px-8 pb-4">Commitment</th>
+<th class="px-8 pb-4">Onboarding</th>
+<th class="px-8 pb-4">Scalability</th>
+</tr>
+</thead>
+<tbody class="space-y-4">
+<!-- Pilot Row -->
+<tr class="bg-surface-container-low rounded-2xl group transition-colors">
+<td class="px-8 py-8 rounded-l-2xl border-l-4 border-tertiary-fixed">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">experiment</span>
+</div>
+<span class="font-bold text-primary text-xl">3-Month Pilot</span>
+</div>
+</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">Validate Product-Market-Lead Fit</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">Short-term / Trial</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">7 Business Days</td>
+<td class="px-8 py-8 rounded-r-2xl text-on-surface-variant font-medium">Fixed 1-2 FTE</td>
+</tr>
+<!-- Engagement Row -->
+<tr class="bg-surface-container-low rounded-2xl group transition-colors">
+<td class="px-8 py-8 rounded-l-2xl border-l-4 border-secondary">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+</div>
+<span class="font-bold text-primary text-xl">6-Month Engagement</span>
+</div>
+</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">Scaling Proven Channels</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">Medium-term Performance</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">10 Business Days</td>
+<td class="px-8 py-8 rounded-r-2xl text-on-surface-variant font-medium">Flexible 3-5 FTE</td>
+</tr>
+<!-- Long Term Row -->
+<tr class="bg-surface-container-low rounded-2xl group transition-colors">
+<td class="px-8 py-8 rounded-l-2xl border-l-4 border-primary">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+<span class="font-bold text-primary text-xl">Long-Term Deployment</span>
+</div>
+</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">Sustained Revenue Growth</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">Strategic Partnership</td>
+<td class="px-8 py-8 text-on-surface-variant font-medium">Full System Audit</td>
+<td class="px-8 py-8 rounded-r-2xl text-on-surface-variant font-medium">Unlimited / On-Demand</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-primary text-on-primary overflow-hidden relative">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(31,58,138,0.4),transparent)]"></div>
+<div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+<h2 class="text-4xl md:text-6xl font-headline font-black mb-8 leading-tight">Ready to architect your high-performance revenue team?</h2>
+<p class="text-on-primary-container text-xl md:text-2xl mb-12 font-medium opacity-90">
+                Get started with a 90-day pilot and experience the difference of managed staffing excellence.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-12 py-5 rounded-lg font-black text-xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
+                    Start Your Pilot
+                </button>
+<button class="bg-transparent border-2 border-on-primary/30 text-on-primary px-12 py-5 rounded-lg font-bold text-xl hover:bg-on-primary/10 transition-all">
+                    Book a Discovery Call
+                </button>
+</div>
+</div>
+<!-- Decorative Graphics -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="absolute -left-20 -top-20 w-80 h-80 bg-tertiary-fixed/5 rounded-full blur-3xl"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full rounded-none">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div>
+<div class="text-xl font-black text-blue-900 dark:text-white mb-6">vPersist</div>
+<p class="body-lg font-sans leading-relaxed text-slate-600 mb-6">The architectural partner for high-growth revenue organizations. Precision staffing, delivered.</p>
+<div class="flex space-x-4">
+<a class="text-slate-400 hover:text-blue-700 transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-blue-700 transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<div class="font-bold text-blue-900 dark:text-blue-400 mb-6">Quick Links</div>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Staffing Solutions</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Managed Services</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Case Studies</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">vPersist Academy</a></li>
+</ul>
+</div>
+<div>
+<div class="font-bold text-blue-900 dark:text-blue-400 mb-6">Core Differentiation</div>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">90-Day Pilot Model</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Data-First Approach</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 hover:translate-x-1 transition-transform inline-block" href="#">Quality Control Layer</a></li>
+</ul>
+</div>
+<div>
+<div class="font-bold text-blue-900 dark:text-blue-400 mb-6">Contact</div>
+<ul class="space-y-4 text-slate-500">
+<li class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>hello@vpersist.com</span>
+</li>
+<li class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>San Francisco, CA</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-slate-500 text-sm">© 2024 vPersist. All rights reserved.</div>
+<div class="flex space-x-8 text-sm">
+<a class="text-slate-500 hover:text-blue-700" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-blue-700" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>
