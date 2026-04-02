@@ -21,6 +21,10 @@ Transition vPersist.com from legacy PHP to a high-performance Next.js 15 & Tailw
 - [ ] Task 7: Build API Route `app/api/contact/route.ts` for Lead Capture → Verify: Mock POST request returns 200 OK.
 - [ ] Task 8: Build specific domain pages (`staffing`, `demand-gen`, `services`, `employers`) → Verify: Navigation routes work correctly.
 - [ ] Task 9: Implement final Polish (Framer Motion reveals, Mobile responsiveness) → Verify: No clipping on 320px screens, animations smooth.
+- [ ] Task 10: Fix 404 routes (`/privacy`, `/terms`) and create legal pages.
+- [ ] Task 11: Upgrade static Hero Layer Cards to interactive components (Modals/Popups).
+- [ ] Task 12: Add micro-animations (Scale/Glow) to Core Value Cards.
+
 
 ## Done When (Phase X Verification)
 - [ ] Lint: `npm run lint` passes

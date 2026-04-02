@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# antigravity
+.agent/preview.log
+.agent/preview.pid
+.agent/preview.err

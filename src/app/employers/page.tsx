@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 export default function EmployersPage() {
@@ -16,12 +17,16 @@ export default function EmployersPage() {
               Scale your revenue operations without the risk of permanent overhead. Test markets, validate ROIs, and build high-performance teams with our architectural approach to staffing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary" size="lg" glow>
-                Talk to Our Team
-              </Button>
-              <Button variant="outline" size="lg">
-                View Pilot Packages
-              </Button>
+              <Link href="/contact?interest=team">
+                <Button variant="primary" size="lg" glow>
+                  Talk to Our Team
+                </Button>
+              </Link>
+              <Link href="/services#pilot">
+                <Button variant="outline" size="lg">
+                  View Pilot Packages
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="relative">
@@ -97,7 +102,7 @@ export default function EmployersPage() {
                 </div>
                 <h3 className="text-4xl font-black tracking-tight mb-6 leading-none">3-Month Pilot</h3>
                 <p className="text-white/60 text-lg max-w-sm mb-12 italic leading-relaxed">
-                  "The ultimate de-risking tool. We deploy a full-stack revenue cell into your business for 90 days. We find the signal, you keep the results."
+                  &quot;The ultimate de-risking tool. We deploy a full-stack revenue cell into your business for 90 days. We find the signal, you keep the results.&quot;
                 </p>
                 <div className="space-y-4 mb-12">
                   {["Immediate execution capability", "Weekly performance blueprints", "No long-term contractual lock-in"].map((li, i) => (
@@ -108,7 +113,9 @@ export default function EmployersPage() {
                   ))}
                 </div>
               </div>
-              <Button variant="tertiary" size="lg" className="w-full py-5 text-xl" glow>Apply for a Pilot</Button>
+              <Link href="/contact?interest=pilot">
+                <Button variant="tertiary" size="lg" className="w-full py-5 text-xl" glow>Apply for a Pilot</Button>
+              </Link>
               <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
             </div>
             
@@ -118,7 +125,7 @@ export default function EmployersPage() {
                 <div>
                   <span className="material-symbols-outlined text-4xl text-secondary mb-6">hub</span>
                   <h3 className="text-2xl font-black tracking-tight mb-4 text-primary">Full Demand Gen Setup</h3>
-                  <p className="text-text-muted text-sm leading-relaxed mb-6">We don't just provide bodies; we provide the brain. We build your entire outbound and inbound revenue machine.</p>
+                  <p className="text-text-muted text-sm leading-relaxed mb-6">We don&apos;t just provide bodies; we provide the brain. We build your entire outbound and inbound revenue machine.</p>
                 </div>
                 <Link href="/demand-gen" className="text-secondary font-bold flex items-center gap-2 text-sm hover:underline">
                   Explore Setup Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -148,10 +155,12 @@ export default function EmployersPage() {
             <div className="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-tight text-primary text-center">Ready to test your <br/><span className="text-secondary">revenue engine?</span></h2>
             <p className="text-xl text-text-muted mb-12 max-w-2xl mx-auto italic">
-              "Schedule a 15-minute diagnostic call with our staffing architects to determine if a pilot is right for your current stage."
+              &quot;Schedule a 15-minute diagnostic call with our staffing architects to determine if a pilot is right for your current stage.&quot;
             </p>
             <div className="flex justify-center">
-              <Button variant="primary" size="lg" glow>Talk to Our Team</Button>
+              <Link href="/contact?interest=diagnostic">
+                <Button variant="primary" size="lg" glow>Talk to Our Team</Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -159,5 +168,3 @@ export default function EmployersPage() {
     </div>
   );
 }
-
-import Link from "next/link";

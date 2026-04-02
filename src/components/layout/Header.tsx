@@ -58,9 +58,11 @@ export const Header = () => {
               Talk to Team
             </Button>
           </Link>
-          <Button variant="primary" size="sm">
-            Start 3-Month Pilot
-          </Button>
+          <Link href="/contact">
+            <Button variant="primary" size="sm">
+              Start 3-Month Pilot
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

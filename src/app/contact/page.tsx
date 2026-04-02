@@ -1,18 +1,51 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { useSearchParams } from "next/navigation";
+
+// Form Schema
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid business email"),
+  company: z.string().min(2, "Company name is required"),
+  message: z.string().min(10, "Please provide more details (min 10 characters)"),
+  interest: z.string().optional(),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function ContactPage() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Inquiry triggered");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const searchParams = useSearchParams();
+  const interestParam = searchParams.get("interest") || "general";
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      interest: interestParam,
+    },
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    // Mock API Delay
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    console.log("Revenue Inquiry Authorized:", data);
+    setIsSubmitted(true);
   };
 
   return (
-    <div className="flex flex-col">
-      <main className="pt-48 pb-24 px-8 max-w-7xl mx-auto">
+    <div className="flex flex-col min-h-screen">
+      <main className="pt-48 pb-24 px-8 max-w-7xl mx-auto flex-grow">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
           {/* Left Column: Editorial Content */}
           <div className="lg:col-span-5">
@@ -25,7 +58,6 @@ export default function ContactPage() {
             </p>
 
             <div className="space-y-12">
-              {/* Contact Method 1 */}
               <div className="flex items-start gap-6 group">
                 <div className="w-14 h-14 flex items-center justify-center bg-surface-low border border-surface-high rounded-xl text-primary shadow-revenue group-hover:border-secondary transition-colors">
                   <span className="material-symbols-outlined text-2xl">mail</span>
@@ -39,7 +71,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Contact Method 2 */}
               <div className="flex items-start gap-6 group">
                 <div className="w-14 h-14 flex items-center justify-center bg-surface-low border border-surface-high rounded-xl text-primary shadow-revenue group-hover:border-secondary transition-colors">
                   <span className="material-symbols-outlined text-2xl">location_on</span>
@@ -51,97 +82,122 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-
-            {/* Subtle Decorative Element */}
-            <div className="mt-24 p-10 bg-surface-low rounded-3xl relative overflow-hidden border border-surface-high">
-              <div className="relative z-10">
-                <p className="text-base font-bold text-primary mb-4 italic leading-relaxed">
-                  "Precision in communication is the first step toward excellence."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-px bg-primary/20"></div>
-                  <p className="text-[10px] uppercase font-black tracking-widest text-text-muted">vPersist Leadership Team</p>
-                </div>
-              </div>
-              <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
-            </div>
           </div>
 
           {/* Right Column: Form Container */}
-          <div className="lg:col-span-7 bg-white p-10 md:p-16 rounded-3xl shadow-revenue relative border border-surface-high">
-            {/* Accent Corner */}
+          <div className="lg:col-span-7 bg-white p-10 md:p-16 rounded-3xl shadow-revenue relative border border-surface-high overflow-hidden min-h-[600px]">
             <div className="absolute top-0 right-0 w-32 h-3 bg-secondary rounded-tr-3xl"></div>
             
-            <form onSubmit={handleSubmit} className="space-y-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                {/* Name */}
-                <div className="space-y-3">
-                  <label className="text-xs font-black uppercase tracking-widest text-primary flex items-center gap-2" htmlFor="name">
-                    Full Name
-                    <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                  </label>
-                  <input 
-                    className="w-full bg-surface-low border-b-2 border-transparent focus:border-secondary rounded-xl px-6 py-4 text-primary focus:ring-0 transition-all outline-none text-base font-medium placeholder:text-slate-300 shadow-inner" 
-                    id="name" 
-                    placeholder="Enter your name" 
-                    required
-                    type="text" 
-                  />
-                </div>
-                {/* Email */}
-                <div className="space-y-3">
-                  <label className="text-xs font-black uppercase tracking-widest text-primary flex items-center gap-2" htmlFor="email">
-                    Business Email
-                    <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                  </label>
-                  <input 
-                    className="w-full bg-surface-low border-b-2 border-transparent focus:border-secondary rounded-xl px-6 py-4 text-primary focus:ring-0 transition-all outline-none text-base font-medium placeholder:text-slate-300 shadow-inner" 
-                    id="email" 
-                    placeholder="name@company.com" 
-                    required
-                    type="email" 
-                  />
-                </div>
-              </div>
+            <AnimatePresence mode="wait">
+              {!isSubmitted ? (
+                <motion.div
+                  key="form"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                      {/* Name */}
+                      <div className="space-y-3">
+                        <label className="text-xs font-black uppercase tracking-widest text-primary flex items-center gap-2" htmlFor="name">
+                          Full Name
+                          <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                        </label>
+                        <input 
+                          {...register("name")}
+                          className={`w-full bg-surface-low border-b-2 rounded-xl px-6 py-4 text-primary focus:ring-0 transition-all outline-none text-base font-medium placeholder:text-slate-300 shadow-inner ${errors.name ? 'border-red-500' : 'border-transparent focus:border-secondary'}`}
+                          id="name" 
+                          placeholder="Enter your name" 
+                        />
+                        {errors.name && <p className="text-[10px] font-bold text-red-500 uppercase tracking-widest">{errors.name.message}</p>}
+                      </div>
+                      {/* Email */}
+                      <div className="space-y-3">
+                        <label className="text-xs font-black uppercase tracking-widest text-primary flex items-center gap-2" htmlFor="email">
+                          Business Email
+                          <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                        </label>
+                        <input 
+                          {...register("email")}
+                          className={`w-full bg-surface-low border-b-2 rounded-xl px-6 py-4 text-primary focus:ring-0 transition-all outline-none text-base font-medium placeholder:text-slate-300 shadow-inner ${errors.email ? 'border-red-500' : 'border-transparent focus:border-secondary'}`}
+                          id="email" 
+                          placeholder="name@company.com" 
+                        />
+                        {errors.email && <p className="text-[10px] font-bold text-red-500 uppercase tracking-widest">{errors.email.message}</p>}
+                      </div>
+                    </div>
 
-              {/* Company */}
-              <div className="space-y-3">
-                <label className="text-xs font-black uppercase tracking-widest text-primary" htmlFor="company">Company Name</label>
-                <input 
-                  className="w-full bg-surface-low border-b-2 border-transparent focus:border-secondary rounded-xl px-6 py-4 text-primary focus:ring-0 transition-all outline-none text-base font-medium placeholder:text-slate-300 shadow-inner" 
-                  id="company" 
-                  placeholder="vPersist Inc." 
-                  type="text" 
-                />
-              </div>
+                    {/* Company */}
+                    <div className="space-y-3">
+                      <label className="text-xs font-black uppercase tracking-widest text-primary" htmlFor="company">Company Name</label>
+                      <input 
+                        {...register("company")}
+                        className={`w-full bg-surface-low border-b-2 rounded-xl px-6 py-4 text-primary focus:ring-0 transition-all outline-none text-base font-medium placeholder:text-slate-300 shadow-inner ${errors.company ? 'border-red-500' : 'border-transparent focus:border-secondary'}`}
+                        id="company" 
+                        placeholder="vPersist Inc." 
+                      />
+                      {errors.company && <p className="text-[10px] font-bold text-red-500 uppercase tracking-widest">{errors.company.message}</p>}
+                    </div>
 
-              {/* Message */}
-              <div className="space-y-3">
-                <label className="text-xs font-black uppercase tracking-widest text-primary" htmlFor="message">How can we help?</label>
-                <textarea 
-                  className="w-full bg-surface-low border-b-2 border-transparent focus:border-secondary rounded-xl px-6 py-4 text-primary focus:ring-0 transition-all outline-none text-base font-medium placeholder:text-slate-300 shadow-inner min-h-[150px] resize-none" 
-                  id="message" 
-                  placeholder="Briefly describe your requirements..." 
-                  rows={4} 
-                />
-              </div>
+                    {/* Message */}
+                    <div className="space-y-3">
+                      <label className="text-xs font-black uppercase tracking-widest text-primary" htmlFor="message">How can we help?</label>
+                      <textarea 
+                        {...register("message")}
+                        className={`w-full bg-surface-low border-b-2 rounded-xl px-6 py-4 text-primary focus:ring-0 transition-all outline-none text-base font-medium placeholder:text-slate-300 shadow-inner min-h-[150px] resize-none ${errors.message ? 'border-red-500' : 'border-transparent focus:border-secondary'}`}
+                        id="message" 
+                        placeholder="Briefly describe your requirements..." 
+                        rows={4} 
+                      />
+                      {errors.message && <p className="text-[10px] font-bold text-red-500 uppercase tracking-widest">{errors.message.message}</p>}
+                    </div>
 
-              {/* Action */}
-              <div className="pt-6 flex flex-col md:flex-row items-center gap-8">
-                <Button variant="primary" size="lg" className="w-full md:w-auto px-12" glow type="submit">
-                  Execute Inquiry
-                  <span className="material-symbols-outlined text-lg ml-2">bolt</span>
-                </Button>
-                <p className="text-[10px] font-bold text-slate-400 max-w-[220px] uppercase tracking-wider leading-relaxed">
-                  By submitting, you agree to our <span className="text-primary hover:underline cursor-pointer">privacy framework</span> and terms.
-                </p>
-              </div>
-            </form>
+                    {/* Action */}
+                    <div className="pt-6 flex flex-col md:flex-row items-center gap-8">
+                      <Button variant="primary" size="lg" className="w-full md:w-auto px-12" glow type="submit" disabled={isSubmitting}>
+                        {isSubmitting ? "Authorizing..." : "Execute Inquiry"}
+                        {!isSubmitting && <span className="material-symbols-outlined text-lg ml-2">bolt</span>}
+                      </Button>
+                      <p className="text-[10px] font-bold text-slate-400 max-w-[220px] uppercase tracking-wider leading-relaxed">
+                        By submitting, you agree to our <span className="text-primary hover:underline cursor-pointer">privacy framework</span> and terms.
+                      </p>
+                    </div>
+                  </form>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center h-full text-center py-20"
+                >
+                  <div className="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center text-secondary mb-8">
+                    <motion.span 
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+                      className="material-symbols-outlined text-6xl"
+                    >
+                      check_circle
+                    </motion.span>
+                  </div>
+                  <h2 className="text-3xl font-black text-primary mb-4 tracking-tight">System Authorized.</h2>
+                  <p className="text-text-muted text-lg max-w-sm mb-12 italic">
+                    "Your revenue inquiry has been successfully deployed. A specialist architect will contact you within 24 hours."
+                  </p>
+                  <Button variant="outline" onClick={() => setIsSubmitted(false)}>
+                    Submit Another Inquiry
+                  </Button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </main>
 
-      {/* Global Hub Hub Section */}
+      {/* Global Hub Section */}
       <section className="bg-surface-low py-32 overflow-hidden border-y border-surface-high">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
@@ -149,7 +205,7 @@ export default function ContactPage() {
               <div className="absolute -inset-6 bg-secondary/5 rounded-3xl group-hover:bg-secondary/10 transition-colors duration-500"></div>
               <div className="aspect-video bg-primary-container/20 rounded-2xl overflow-hidden shadow-revenue relative">
                 <img 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdorIe4u7cEWRcUB6ayLocLFAWGGSym3VvQLDIVrn_ZwhEz1x4ioiPAZj8IPJ6UK5Cbrnw5Q06YVMU6XxFO0eTyQi-9ysV8gLOGG-dWH6UczjzuoOqvXsp8TAC0z1Dqo_sDkXXKY_sP0CYxzDIjzPvwitM277Se3T9rZKGskcupbw2f90QIX1JIcGbmgO5UMGlmshmw-rZfEaA_qaNgiBHevxmA6XdOf-A_nI76RaXyuMUZF76sGFoGAO-KxcE0RmeeiDqSpxb0F07" 
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
                   alt="vPersist HQ" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />

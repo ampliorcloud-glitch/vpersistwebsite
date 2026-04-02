@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 export default function ServicesPage() {
@@ -16,7 +17,7 @@ export default function ServicesPage() {
           </div>
           <div className="lg:col-span-4 pb-4">
             <div className="p-8 bg-surface-low rounded-xl border-l-4 border-secondary shadow-revenue">
-              <p className="text-sm font-medium text-primary mb-2 italic">"The architecture of vPersist allowed us to scale from zero to $2M ARR in six months without hiring a single internal recruiter."</p>
+              <p className="text-sm font-medium text-primary mb-2 italic">&quot;The architecture of vPersist allowed us to scale from zero to $2M ARR in six months without hiring a single internal recruiter.&quot;</p>
               <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest">— VP Revenue, CloudScale</p>
             </div>
           </div>
@@ -27,7 +28,7 @@ export default function ServicesPage() {
       <section className="max-w-7xl mx-auto px-8 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Pilot Module */}
-          <div className="md:col-span-7 bg-primary text-white p-12 rounded-xl relative overflow-hidden group">
+          <div id="pilot" className="md:col-span-7 bg-primary text-white p-12 rounded-xl relative overflow-hidden group scroll-mt-32">
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-12">
                 <span className="bg-amber-500 text-white px-3 py-1 text-[10px] font-black rounded">NEW</span>
@@ -47,9 +48,11 @@ export default function ServicesPage() {
                   <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest">Resource Access</span>
                 </div>
               </div>
-              <Button variant="tertiary" size="lg" glow>
-                Request Pilot Framework
-              </Button>
+              <Link href="/contact?interest=pilot">
+                <Button variant="tertiary" size="lg" glow>
+                  Request Pilot Framework
+                </Button>
+              </Link>
             </div>
             <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
           </div>
@@ -74,6 +77,9 @@ export default function ServicesPage() {
                 </li>
               ))}
             </ul>
+            <Link href="/contact?interest=setup">
+              <Button variant="outline" className="w-full">Initialize Setup Inquiry</Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -86,7 +92,7 @@ export default function ServicesPage() {
             <h2 className="text-5xl font-black tracking-tighter text-primary">Precision Components.</h2>
           </div>
           <p className="text-text-muted max-w-xs text-sm italic">
-            "Select the specific modules your organization requires. No bloat, only performance."
+            &quot;Select the specific modules your organization requires. No bloat, only performance.&quot;
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-surface-high">
@@ -98,12 +104,13 @@ export default function ServicesPage() {
             { title: "Recruitment", icon: "person_search", desc: "We identify and pre-screen top 1% talent for your permanent revenue roles." },
             { title: "Training", icon: "school", desc: "Ongoing education for your revenue team. Modern methodologies and objection handling." }
           ].map((service, idx) => (
-            <div key={idx} className="p-12 border-r border-b border-surface-high bg-white hover:bg-surface-low transition-colors group">
+            <Link key={idx} href={`/contact?interest=${service.title.toLowerCase().replace(/ /g, '-')}`} className="p-12 border-r border-b border-surface-high bg-white hover:bg-surface-low transition-colors group relative block">
               <span className="material-symbols-outlined text-4xl text-primary mb-8">{service.icon}</span>
               <h3 className="text-xl font-bold text-primary mb-4">{service.title}</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-10">{service.desc}</p>
               <div className="h-1 w-12 bg-secondary group-hover:w-full transition-all duration-500"></div>
-            </div>
+              <span className="absolute top-8 right-8 text-secondary opacity-0 group-hover:opacity-100 transition-opacity material-symbols-outlined">north_east</span>
+            </Link>
           ))}
         </div>
       </section>
