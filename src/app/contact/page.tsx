@@ -57,17 +57,28 @@ function ContactFormContent() {
         body: JSON.stringify({ ...data, turnstileToken }),
       });
 
+      // Robust check: Ensure we got a JSON response
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        const errorText = await response.text();
+        console.error("Non-JSON response from server:", errorText);
+        setErrorMessage("Network infrastructure error (403/Forbidden). Please check your domain connection.");
+        return;
+      }
+
       const result = await response.json();
 
       if (result.success) {
         setIsSubmitted(true);
         reset();
+        setTurnstileToken(""); // Reset for next time
       } else {
-        setErrorMessage(result.message || "Submission failed. Please try again.");
+        setErrorMessage(result.message || "Security verification failed.");
+        if (result.debug) console.warn("Diagnostic codes:", result.debug);
       }
     } catch (error) {
-      setErrorMessage("Network error. Please check your connection.");
-      console.error("Submission error:", error);
+      setErrorMessage("System error. Please try again or contact hello@vpersist.com directly.");
+      console.error("Submission crash:", error);
     }
   };
 

@@ -13,8 +13,14 @@ export async function POST(req: NextRequest) {
 
     // 2. Cloudflare Turnstile Verification
     const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+    
+    // Diagnostic: Check if keys are actually loading from Hostinger's environment
+    if (!turnstileSecret) {
+      console.error("DIAGNOSTIC: TURNSTILE_SECRET_KEY is MISSING from server environment.");
+    }
+
     if (!turnstileToken) {
-      return NextResponse.json({ success: false, message: "Security token missing." }, { status: 400 });
+      return NextResponse.json({ success: false, message: "Security token missing." }, { status: 200 });
     }
 
     const verifyResponse = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
@@ -24,8 +30,15 @@ export async function POST(req: NextRequest) {
     });
 
     const verifyData = await verifyResponse.json();
+    
     if (!verifyData.success) {
-      return NextResponse.json({ success: false, message: "Security verification failed." }, { status: 403 });
+      console.error("Cloudflare Turnstile Verification FAILED:", verifyData["error-codes"]);
+      // Return 200 instead of 403 to prevent Hostinger from 'hijacking' with HTML error pages
+      return NextResponse.json({ 
+        success: false, 
+        message: "Security verification failed. Please try again or check your domain settings.",
+        debug: verifyData["error-codes"] 
+      }, { status: 200 });
     }
 
     // 3. Brevo (Sendinblue) Email Logic
