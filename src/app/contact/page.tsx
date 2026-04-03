@@ -7,6 +7,7 @@ import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { useSearchParams } from "next/navigation";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 // Form Schema
 const contactSchema = z.object({
@@ -15,6 +16,7 @@ const contactSchema = z.object({
   company: z.string().min(2, "Company name is required"),
   message: z.string().min(10, "Please provide more details (min 10 characters)"),
   interest: z.string().optional(),
+  botField: z.string().max(0, "Bot detected").optional(), // Honeypot
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -33,14 +35,40 @@ export default function ContactPage() {
     resolver: zodResolver(contactSchema),
     defaultValues: {
       interest: interestParam,
+      botField: "",
     },
   });
 
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const onSubmit = async (data: ContactFormData) => {
-    // Mock API Delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Revenue Inquiry Authorized:", data);
-    setIsSubmitted(true);
+    setErrorMessage(null);
+    
+    if (!turnstileToken) {
+      setErrorMessage("Please complete the security verification.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, turnstileToken }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        reset();
+      } else {
+        setErrorMessage(result.message || "Submission failed. Please try again.");
+      }
+    } catch (error) {
+      setErrorMessage("Network error. Please check your connection.");
+      console.error("Submission error:", error);
+    }
   };
 
   return (
@@ -155,14 +183,34 @@ export default function ContactPage() {
                     </div>
 
                     {/* Action */}
-                    <div className="pt-6 flex flex-col md:flex-row items-center gap-8">
-                      <Button variant="primary" size="lg" className="w-full md:w-auto px-12" glow type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? "Authorizing..." : "Execute Inquiry"}
-                        {!isSubmitting && <span className="material-symbols-outlined text-lg ml-2">bolt</span>}
-                      </Button>
-                      <p className="text-[10px] font-bold text-slate-400 max-w-[220px] uppercase tracking-wider leading-relaxed">
-                        By submitting, you agree to our <span className="text-primary hover:underline cursor-pointer">privacy framework</span> and terms.
-                      </p>
+                    <div className="pt-6 space-y-8">
+                      {/* Honeypot Field (Hidden) */}
+                      <input type="text" {...register("botField")} className="hidden" tabIndex={-1} autoComplete="off" />
+
+                      {/* Turnstile Widget */}
+                      <div className="flex justify-center md:justify-start">
+                        <Turnstile 
+                          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""} 
+                          onSuccess={(token) => setTurnstileToken(token)}
+                          onExpire={() => setTurnstileToken("")}
+                        />
+                      </div>
+
+                      {errorMessage && (
+                        <p className="text-xs font-bold text-red-500 uppercase tracking-widest text-center md:text-left">
+                          ⚠️ {errorMessage}
+                        </p>
+                      )}
+
+                      <div className="flex flex-col md:flex-row items-center gap-8">
+                        <Button variant="primary" size="lg" className="w-full md:w-auto px-12" glow type="submit" disabled={isSubmitting}>
+                          {isSubmitting ? "Authorizing..." : "Execute Inquiry"}
+                          {!isSubmitting && <span className="material-symbols-outlined text-lg ml-2">bolt</span>}
+                        </Button>
+                        <p className="text-[10px] font-bold text-slate-400 max-w-[220px] uppercase tracking-wider leading-relaxed">
+                          By submitting, you agree to our <span className="text-primary hover:underline cursor-pointer">privacy framework</span> and terms.
+                        </p>
+                      </div>
                     </div>
                   </form>
                 </motion.div>
