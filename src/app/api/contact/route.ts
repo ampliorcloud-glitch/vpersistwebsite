@@ -50,14 +50,55 @@ export async function POST(req: NextRequest) {
     }
 
     // This is the admin email that will receive the leads and be the CC
-    const adminEmail = process.env.CONTACT_FORM_RECIPIENT || "ankit.s@amplior.com"; 
-    const senderEmail = process.env.SENDER_EMAIL || adminEmail; 
-    const senderName = process.env.SENDER_NAME || "vPersist | Architecture Studio";
+    // Where new website leads go (Ankit, 12 Nov 2026): Mohit only, data team in BCC.
+    const leadsTo = process.env.LEADS_TO || "mohit@amplior.com";
+    const leadsBcc = process.env.LEADS_BCC || "data.team@amplior.com";
+    // The sender must stay a Brevo-verified address (this is what has been sending since April).
+    const senderEmail = process.env.SENDER_EMAIL || "ankit.s@amplior.com";
+    const senderName = "vPersist";
 
+    const esc = (v: unknown) =>
+      String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] as string));
+    const visitorEmail = String(email || "").trim();
+    if (!name || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(visitorEmail)) {
+      return NextResponse.json({ success: false, message: "Please enter your name and a valid email." }, { status: 200 });
+    }
+
+    // Lead notification for the team: full details, reply goes straight to the visitor.
+    const leadBody = {
+      sender: { name: senderName, email: senderEmail },
+      to: [{ email: leadsTo }],
+      bcc: [{ email: leadsBcc }],
+      replyTo: { email: visitorEmail, name: String(name) },
+      subject: `[vPersist lead] ${String(name)} - ${String(company || "No company")} - ${String(interest || "General")}`,
+      htmlContent: `
+        <div style="font-family: sans-serif; padding: 24px; max-width: 600px;">
+          <h2 style="margin: 0 0 16px;">New enquiry from vpersist.com</h2>
+          <p><strong>Name:</strong> ${esc(name)}</p>
+          <p><strong>Email:</strong> <a href="mailto:${esc(visitorEmail)}">${esc(visitorEmail)}</a></p>
+          <p><strong>Company:</strong> ${esc(company) || "N/A"}</p>
+          <p><strong>Interest:</strong> ${esc(interest) || "General"}</p>
+          <p><strong>Message:</strong><br/>${esc(message).replace(/\n/g, "<br/>") || "(none)"}</p>
+          <p style="color:#888;font-size:12px;">Press Reply to answer the visitor directly.</p>
+        </div>
+      `,
+    };
+
+    const leadResponse = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "api-key": brevoApiKey as string },
+      body: JSON.stringify(leadBody),
+    });
+    if (!leadResponse.ok) {
+      const leadErr = await leadResponse.json().catch(() => ({}));
+      console.error("Lead email failed:", leadResponse.status, leadErr);
+      return NextResponse.json({ success: false, message: "Email delivery failed." }, { status: 500 });
+    }
+
+    // Thank-you email to the visitor (no internal addresses on it).
     const emailBody = {
-      sender: { name: senderName, email: senderEmail }, 
-      to: [{ email: email, name: name }], 
-      cc: [{ email: adminEmail, name: "Ankit Sundriyal" }], 
+      sender: { name: senderName, email: senderEmail },
+      to: [{ email: visitorEmail, name: String(name) }],
       subject: `vPersist Architecture Inquiry: [Authorized] - ${interest || "General Request"}`,
       htmlContent: `
         <div style="font-family: sans-serif; padding: 40px; border: 1px solid #1a1a1a; max-width: 600px; margin: auto; background-color: #ffffff;">
@@ -66,13 +107,13 @@ export async function POST(req: NextRequest) {
           <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
           <div style="background: #f8f8f8; padding: 25px; border-radius: 12px;">
             <p style="font-size: 12px; font-weight: 900; color: #777; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Transmission Details</p>
-            <p style="margin: 5px 0;"><strong>Name:</strong> ${name}</p>
-            <p style="margin: 5px 0;"><strong>Company:</strong> ${company || "N/A"}</p>
-            <p style="margin: 5px 0;"><strong>Requirement:</strong> ${interest || "General"}</p>
+            <p style="margin: 5px 0;"><strong>Name:</strong> ${esc(name)}</p>
+            <p style="margin: 5px 0;"><strong>Company:</strong> ${esc(company) || "N/A"}</p>
+            <p style="margin: 5px 0;"><strong>Requirement:</strong> ${esc(interest) || "General"}</p>
           </div>
           <p style="margin-top: 30px; font-size: 14px; color: #333;">A specialist will contact you directly within 24 hours to schedule a deep-dive.</p>
           <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
-          <p style="font-size: 10px; color: #aaa; text-align: center; text-transform: uppercase; letter-spacing: 1px;">&copy; vPersist Architecture Studio | 2026 Revenue Platform</p>
+          <p style="font-size: 10px; color: #aaa; text-align: center; text-transform: uppercase; letter-spacing: 1px;">&copy; vPersist</p>
         </div>
       `,
     };
@@ -92,7 +133,8 @@ export async function POST(req: NextRequest) {
     console.log("Brevo Response Data:", brevoData);
 
     if (!brevoResponse.ok) {
-      return NextResponse.json({ success: false, message: brevoData.message || "Email delivery failed." }, { status: 500 });
+      // The lead already reached the team; only the thank-you failed.
+      console.error("Visitor thank-you email failed:", brevoResponse.status, brevoData);
     }
 
     return NextResponse.json({ success: true, message: "Inquiry transmitted successfully." });
