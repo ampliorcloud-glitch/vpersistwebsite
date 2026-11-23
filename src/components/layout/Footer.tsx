@@ -29,7 +29,7 @@ export const Footer = () => {
         {/* Branding Column */}
         <div className="flex flex-col gap-6">
           <Link href="/" aria-label="vPersist home">
-            <Image src="/brand/vpersist-logo-white.png" alt="vPersist" width={164} height={40} unoptimized />
+            <Image src="/brand/vpersist-logo-white.svg" alt="vPersist" width={163} height={40} unoptimized />
           </Link>
           <p className="text-sm text-white/60 leading-relaxed max-w-[240px]">
             The high-performance architecture for modern B2B revenue teams. 

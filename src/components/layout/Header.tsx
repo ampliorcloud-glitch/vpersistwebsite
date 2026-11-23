@@ -38,7 +38,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" aria-label="vPersist home">
-          <Image src="/brand/vpersist-logo.png" alt="vPersist" width={164} height={40} unoptimized priority className="h-7 w-auto sm:h-10" />
+          <Image src="/brand/vpersist-logo.svg" alt="vPersist" width={163} height={40} unoptimized priority className="h-7 w-auto sm:h-10" />
         </Link>
 
         {/* Desktop Navigation */}
