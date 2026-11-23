@@ -199,7 +199,7 @@ export default function StaffingPage() {
 
       {/* CTA Final */}
       <section className="py-24 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(13,242,201,0.15),transparent)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,144,224,0.15),transparent)]"></div>
         <div className="max-w-4xl mx-auto px-8 relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-none">
             Ready to deploy?

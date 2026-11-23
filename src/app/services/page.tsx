@@ -138,7 +138,7 @@ export default function ServicesPage() {
           </div>
           <div className="relative">
             <div className="aspect-square bg-primary rounded-2xl overflow-hidden shadow-revenue relative">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,107,95,0.4),transparent)]"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,144,224,0.4),transparent)]"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-12">
                 <div className="bg-white/10 backdrop-blur-xl p-8 rounded-xl border border-white/20">
                   <h4 className="text-2xl font-bold text-white mb-2">Architectural Logic</h4>

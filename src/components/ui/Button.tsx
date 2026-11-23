@@ -13,7 +13,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const variants = {
       primary: "bg-primary text-white hover:opacity-90",
       secondary: "bg-secondary text-white hover:opacity-90",
-      tertiary: "bg-tertiary text-text-main hover:translate-y-[-2px]",
+      tertiary: "brand-gradient text-white hover:translate-y-[-2px]",
       outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
     };
 

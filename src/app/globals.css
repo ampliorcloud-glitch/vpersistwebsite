@@ -2,24 +2,26 @@
 
 @theme {
   /* Brand Colors - vPersist Precision Architect */
-  --color-primary: #002270;
-  --color-secondary: #006b5f;
-  --color-tertiary: #ef9900;
+  --color-primary: #0E1320;
+  --color-secondary: #0090E0;
+  --color-tertiary: #503080;
   
   /* Backgrounds & Surfaces (Tonal Layering instead of Lines) */
-  --color-background: #f8f9ff;
-  --color-surface-low: #eff4ff;
-  --color-surface-high: #d3e4fe;
+  --color-background: #FFFFFF;
+  --color-surface-low: #F4F6FB;
+  --color-surface-high: #E2E6EF;
   
   /* Text */
-  --color-text-main: #0b1c30;
-  --color-text-muted: #444651;
+  --color-text-main: #0E1320;
+  --color-text-muted: #5C6478;
 
   /* Typography Variables */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
   
+  --font-heading: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+
   /* Custom Shadows (Revenue Glow) */
-  --shadow-revenue: 0px 24px 48px rgba(11, 28, 48, 0.06);
+  --shadow-revenue: 0px 24px 48px rgba(14, 19, 32, 0.06);
 }
 
 :root {
@@ -44,4 +46,12 @@ body {
 @utility no-line-section {
   border: none;
   background-color: var(--color-surface-low);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@utility brand-gradient {
+  background-image: linear-gradient(90deg, #0090E0 0%, #2D5BAE 50%, #503080 100%);
 }

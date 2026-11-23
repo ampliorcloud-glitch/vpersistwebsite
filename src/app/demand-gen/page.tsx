@@ -184,7 +184,7 @@ export default function DemandGenPage() {
 
       {/* Outcome Section */}
       <section className="relative bg-primary py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(13,242,201,0.15),transparent)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,144,224,0.15),transparent)]"></div>
         <div className="max-w-4xl mx-auto px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

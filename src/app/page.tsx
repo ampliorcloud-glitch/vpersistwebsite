@@ -74,7 +74,7 @@ export default function Home() {
 
         {/* System Visual: Flow Diagram */}
         <div className="relative bg-surface-low p-12 rounded-full shadow-revenue overflow-hidden min-h-[500px] flex items-center justify-center">
-          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #002270 1px, transparent 0)", backgroundSize: "24px 24px" }}></div>
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #0E1320 1px, transparent 0)", backgroundSize: "24px 24px" }}></div>
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -210,7 +210,7 @@ export default function Home() {
             whileHover={{ scale: 1.01 }}
             className="group bg-primary p-12 rounded-2xl shadow-revenue flex flex-col gap-8 relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(13,242,201,0.1),transparent)] opacity-50"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,144,224,0.1),transparent)] opacity-50"></div>
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-8">
                 <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center text-white">
@@ -237,7 +237,7 @@ export default function Home() {
 
       {/* Demand Gen Setup: Detailed Section */}
       <section className="bg-text-main text-white py-32 overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,34,112,0.4),transparent)] opacity-50"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(80,48,128,0.4),transparent)] opacity-50"></div>
         <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
           <motion.div 
             initial="hidden"

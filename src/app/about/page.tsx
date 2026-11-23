@@ -31,7 +31,7 @@ export default function AboutPage() {
 
       {/* Evolution Section */}
       <section className="bg-primary text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,107,95,0.2),transparent)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,144,224,0.2),transparent)]"></div>
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="mb-20">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-white">Our Evolution</h2>
@@ -138,7 +138,7 @@ export default function AboutPage() {
 
       {/* Final CTA */}
       <section className="bg-primary py-32 text-center text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(0,107,95,0.4),transparent)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(0,144,224,0.4),transparent)]"></div>
         <div className="max-w-4xl mx-auto px-8 relative z-10">
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-[0.9]">Build Your Revenue <br/>Cockpit Today.</h2>
           <p className="text-white/60 text-xl mb-12 font-medium italic">"The 3-Month Pilot starts with a single audit. No long-term commitment, just results."</p>

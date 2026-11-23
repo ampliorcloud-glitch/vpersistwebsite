@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
@@ -34,8 +35,8 @@ export const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-black tracking-tighter text-primary">
-          vPersist
+        <Link href="/" aria-label="vPersist home">
+          <Image src="/brand/vpersist-logo.png" alt="vPersist" width={164} height={40} unoptimized priority className="h-7 w-auto sm:h-10" />
         </Link>
 
         {/* Desktop Navigation */}

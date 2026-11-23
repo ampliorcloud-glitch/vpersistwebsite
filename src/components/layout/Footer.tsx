@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = [
   {
@@ -27,8 +28,8 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Branding Column */}
         <div className="flex flex-col gap-6">
-          <Link href="/" className="text-2xl font-black tracking-tighter text-primary">
-            vPersist
+          <Link href="/" aria-label="vPersist home">
+            <Image src="/brand/vpersist-logo.png" alt="vPersist" width={164} height={40} unoptimized />
           </Link>
           <p className="text-sm text-text-muted leading-relaxed max-w-[240px]">
             The high-performance architecture for modern B2B revenue teams. 
