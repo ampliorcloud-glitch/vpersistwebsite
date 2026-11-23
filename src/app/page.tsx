@@ -59,7 +59,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
             <Link href="/contact?interest=3-month-pilot">
-              <Button variant="tertiary" size="lg" glow>
+              <Button variant="primary" size="lg" glow>
                 Start with a 3-Month Pilot
                 <span className="material-symbols-outlined ml-2">arrow_forward</span>
               </Button>
@@ -86,9 +86,9 @@ export default function Home() {
             <motion.div 
               variants={layerVariants}
               whileHover={{ scale: 1.05, x: 10 }}
-              className="flex items-center gap-4 bg-white p-6 rounded-xl border-l-4 border-secondary shadow-revenue self-start transform -rotate-2 cursor-pointer group"
+              className="flex items-center gap-4 bg-white p-6 rounded-xl border border-surface-high shadow-revenue self-start transform -rotate-2 cursor-pointer group"
             >
-              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+              <div className="w-12 h-12 bg-surface-low rounded-full flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
                 <span className="material-symbols-outlined">groups</span>
               </div>
               <div>
@@ -98,15 +98,15 @@ export default function Home() {
             </motion.div>
             
             {/* Connection Link */}
-            <motion.div variants={itemVariants} className="ml-16 h-8 w-1 bg-secondary/20"></motion.div>
+            <motion.div variants={itemVariants} className="ml-16 h-8 w-1 bg-surface-low"></motion.div>
 
             {/* Layer 02: Supervision */}
             <motion.div 
               variants={layerVariants}
               whileHover={{ scale: 1.05, x: -10 }}
-              className="flex items-center gap-4 bg-white p-6 rounded-xl border-l-4 border-primary shadow-revenue self-center w-full max-w-md cursor-pointer group"
+              className="flex items-center gap-4 bg-white p-6 rounded-xl border border-surface-high shadow-revenue self-center w-full max-w-md cursor-pointer group"
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <div className="w-12 h-12 bg-surface-low rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                 <span className="material-symbols-outlined">verified_user</span>
               </div>
               <div>
@@ -116,20 +116,20 @@ export default function Home() {
             </motion.div>
 
             {/* Connection Link */}
-            <motion.div variants={itemVariants} className="mr-16 h-8 w-1 bg-primary/20 self-end"></motion.div>
+            <motion.div variants={itemVariants} className="mr-16 h-8 w-1 bg-surface-low self-end"></motion.div>
 
             {/* Layer 03: Output */}
             <motion.div 
               variants={layerVariants}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="flex items-center gap-4 bg-primary text-white p-6 rounded-xl shadow-revenue self-end transform rotate-1 cursor-pointer group"
+              className="flex items-center gap-4 bg-white text-primary p-6 rounded-xl shadow-revenue self-end transform rotate-1 cursor-pointer group"
             >
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-secondary transition-colors duration-300">
+              <div className="w-12 h-12 bg-surface-low rounded-full flex items-center justify-center group-hover:bg-secondary transition-colors duration-300">
                 <span className="material-symbols-outlined">trending_up</span>
               </div>
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-widest text-white/60">Layer 03</div>
-                <div className="text-lg font-bold text-white">Revenue Output</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-text-muted">Layer 03</div>
+                <div className="text-lg font-bold text-primary">Revenue Output</div>
               </div>
             </motion.div>
           </motion.div>
@@ -183,13 +183,13 @@ export default function Home() {
           {/* Revenue Staffing Card */}
           <motion.div 
             whileHover={{ scale: 1.01 }}
-            className="group bg-white p-12 rounded-2xl shadow-revenue flex flex-col gap-8 border-t-8 border-secondary border border-surface-high"
+            className="group bg-white p-12 rounded-2xl shadow-revenue flex flex-col gap-8 border border-surface-high"
           >
             <div className="flex justify-between items-start">
-              <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+              <div className="w-16 h-16 bg-surface-low rounded-xl flex items-center justify-center text-secondary">
                 <span className="material-symbols-outlined text-3xl">hub</span>
               </div>
-              <span className="bg-secondary/10 text-secondary px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Modular</span>
+              <span className="bg-surface-low text-secondary px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Modular</span>
             </div>
             <div>
               <h4 className="text-3xl font-bold mb-4 text-text-main">Revenue Staffing</h4>
@@ -208,27 +208,26 @@ export default function Home() {
           {/* Demand Gen Card */}
           <motion.div 
             whileHover={{ scale: 1.01 }}
-            className="group bg-primary p-12 rounded-2xl shadow-revenue flex flex-col gap-8 relative overflow-hidden"
+            className="group bg-white p-12 rounded-2xl shadow-revenue flex flex-col gap-8 relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,144,224,0.1),transparent)] opacity-50"></div>
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-8">
-                <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center text-white">
+                <div className="w-16 h-16 bg-surface-low rounded-xl flex items-center justify-center text-primary">
                   <span className="material-symbols-outlined text-3xl">architecture</span>
                 </div>
-                <span className="bg-white/10 text-white px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Holistic</span>
+                <span className="bg-surface-low text-primary px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Holistic</span>
               </div>
               <div>
-                <h4 className="text-3xl font-bold mb-4 text-white">Demand Gen Setup</h4>
-                <p className="text-white/60 text-lg leading-relaxed mb-6">For companies starting from zero or rebuilding. We build the engine, hire the team, and hand over the keys.</p>
+                <h4 className="text-3xl font-bold mb-4 text-primary">Demand Gen Setup</h4>
+                <p className="text-text-muted text-lg leading-relaxed mb-6">For companies starting from zero or rebuilding. We build the engine, hire the team, and hand over the keys.</p>
               </div>
-              <ul className="flex flex-col gap-4 text-white/80 mb-8">
+              <ul className="flex flex-col gap-4 text-text-muted mb-8">
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-secondary">check_circle</span> Full CRM Implementation</li>
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-secondary">check_circle</span> ICP & Messaging Framework</li>
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-secondary">check_circle</span> Managed Performance Data</li>
               </ul>
               <Link href="/demand-gen">
-                <Button variant="tertiary" className="mt-auto py-4 w-full" glow>Build Your Engine</Button>
+                <Button variant="primary" className="mt-auto py-4 w-full" glow>Build Your Engine</Button>
               </Link>
             </div>
           </motion.div>
@@ -237,7 +236,6 @@ export default function Home() {
 
       {/* Demand Gen Setup: Detailed Section */}
       <section className="bg-text-main text-white py-32 overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(80,48,128,0.4),transparent)] opacity-50"></div>
         <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
           <motion.div 
             initial="hidden"
@@ -246,7 +244,6 @@ export default function Home() {
             variants={containerVariants}
             className="relative"
           >
-            <div className="absolute -top-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
             <motion.h2 variants={itemVariants} className="text-4xl lg:text-5xl font-bold leading-tight mb-12 tracking-tight">
               Precision-Engineered <br /><span className="text-secondary">Revenue Engines.</span>
             </motion.h2>
@@ -274,10 +271,10 @@ export default function Home() {
           >
             <div className="aspect-square relative flex items-center justify-center p-8 bg-text-main/50 rounded-2xl overflow-hidden border border-white/5">
               <div className="grid grid-cols-2 gap-4 w-full h-full opacity-20">
-                <div className="bg-primary rounded-lg"></div>
+                <div className="bg-white/20 rounded-lg"></div>
                 <div className="bg-secondary rounded-lg translate-y-8"></div>
                 <div className="bg-secondary rounded-lg -translate-y-4"></div>
-                <div className="bg-primary rounded-lg"></div>
+                <div className="bg-white/20 rounded-lg"></div>
               </div>
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-12">
                 <h4 className="text-3xl font-bold mb-6 tracking-tight">Ready to scale?</h4>

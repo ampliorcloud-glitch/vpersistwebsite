@@ -64,12 +64,12 @@ export default function DemandGenPage() {
             className="relative"
           >
             <div className="aspect-square rounded-full bg-surface-low absolute -top-12 -right-12 w-full blur-3xl opacity-50 -z-10"></div>
-            <div className="bg-white p-8 rounded-xl shadow-revenue relative border-l-8 border-secondary border border-surface-high">
+            <div className="bg-white p-8 rounded-xl shadow-revenue relative border border-surface-high">
               <div className="flex flex-col gap-6">
                 {[
                   { icon: "hub", color: "text-secondary", label: "Input Architecture", value: "1,200 Verified Leads / Month", delay: 0.4 },
                   { icon: "monitoring", color: "text-primary", label: "Processing Logic", value: "3.8% Demo Conversion", delay: 0.6, offset: true },
-                  { icon: "account_balance_wallet", color: "text-amber-500", label: "Output (Revenue)", value: "$1.2M Pipeline Injected", delay: 0.8 }
+                  { icon: "account_balance_wallet", color: "text-secondary", label: "Output (Revenue)", value: "$1.2M Pipeline Injected", delay: 0.8 }
                 ].map((stat, i) => (
                   <motion.div 
                     key={i}
@@ -101,7 +101,7 @@ export default function DemandGenPage() {
               viewport={{ once: true }}
               variants={containerVariants}
             >
-              <motion.h2 variants={itemVariants} className="text-4xl font-black tracking-tight mb-8 text-primary leading-none">Why Most Demand Gen <br/><span className="text-red-500 uppercase tracking-tighter">Programs Fail.</span></motion.h2>
+              <motion.h2 variants={itemVariants} className="text-4xl font-black tracking-tight mb-8 text-primary leading-none">Why Most Demand Gen <br/><span className="text-primary uppercase tracking-tighter">Programs Fail.</span></motion.h2>
               <ul className="space-y-6">
                 {[
                   { title: "Undefined ICP", desc: "Targeting everyone means reaching no one. Lack of focus drains your budget." },
@@ -109,7 +109,7 @@ export default function DemandGenPage() {
                   { title: "Disconnected Tech Stack", desc: "CRM data silos prevent tracking what actually works." }
                 ].map((item, idx) => (
                   <motion.li key={idx} variants={itemVariants} className="flex gap-4 group">
-                    <span className="material-symbols-outlined text-red-500 group-hover:scale-110 transition-transform">cancel</span>
+                    <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">cancel</span>
                     <div>
                       <p className="font-bold text-primary">{item.title}</p>
                       <p className="text-text-muted text-sm italic">{item.desc}</p>
@@ -122,7 +122,7 @@ export default function DemandGenPage() {
                initial={{ opacity: 0, x: 50 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="bg-white p-12 rounded-2xl shadow-revenue border-t-8 border-secondary border border-surface-high relative"
+               className="bg-white p-12 rounded-2xl shadow-revenue border border-surface-high relative"
             >
               <div className="absolute -top-4 -right-4 w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-revenue">
                 <span className="material-symbols-outlined text-black font-black">verified</span>
@@ -170,7 +170,7 @@ export default function DemandGenPage() {
               key={idx} 
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              className={`bg-white p-8 rounded-xl shadow-revenue relative group border-t-4 ${item.color === 'primary' ? 'border-primary' : 'border-secondary'} transition-all border border-surface-high overflow-hidden cursor-default`}
+              className={`bg-white p-8 rounded-xl shadow-revenue relative group border border-surface-high transition-all border border-surface-high overflow-hidden cursor-default`}
             >
               <span className="text-6xl font-black text-surface-low absolute top-4 right-4 opacity-30 z-0">{item.step}</span>
               <span className={`material-symbols-outlined ${item.color === 'primary' ? 'text-primary' : 'text-secondary'} mb-6 block text-4xl relative z-10 transition-transform group-hover:scale-110`}>{item.icon}</span>
@@ -184,7 +184,6 @@ export default function DemandGenPage() {
 
       {/* Outcome Section */}
       <section className="relative bg-primary py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,144,224,0.15),transparent)]"></div>
         <div className="max-w-4xl mx-auto px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

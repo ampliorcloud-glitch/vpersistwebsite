@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
@@ -17,6 +18,7 @@ const navLinks = [
 ];
 
 export const Header = () => {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -45,7 +47,8 @@ export const Header = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[12px] uppercase tracking-widest font-black text-text-muted hover:text-primary transition-colors duration-200"
+              aria-current={pathname === link.href ? "page" : undefined}
+              className={`text-[12px] uppercase tracking-widest font-semibold hover:text-vp-purple transition-colors duration-200 ${pathname === link.href ? "text-vp-purple" : "text-primary"}`}
             >
               {link.name}
             </Link>

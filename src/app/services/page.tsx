@@ -16,7 +16,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="lg:col-span-4 pb-4">
-            <div className="p-8 bg-surface-low rounded-xl border-l-4 border-secondary shadow-revenue">
+            <div className="p-8 bg-surface-low rounded-xl border border-surface-high shadow-revenue">
               <p className="text-sm font-medium text-primary mb-2 italic">&quot;The architecture of vPersist allowed us to scale from zero to $2M ARR in six months without hiring a single internal recruiter.&quot;</p>
               <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest">— VP Revenue, CloudScale</p>
             </div>
@@ -31,7 +31,7 @@ export default function ServicesPage() {
           <div id="pilot" className="md:col-span-7 bg-primary text-white p-12 rounded-xl relative overflow-hidden group scroll-mt-32">
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-12">
-                <span className="bg-amber-500 text-white px-3 py-1 text-[10px] font-black rounded">NEW</span>
+                <span className="bg-white text-primary px-3 py-1 text-[10px] font-black rounded">NEW</span>
                 <span className="text-white/60 font-bold tracking-widest text-[10px] uppercase">Accelerated Onboarding</span>
               </div>
               <h2 className="text-4xl font-bold tracking-tight mb-6">3-Month Pilot Deployment</h2>
@@ -54,14 +54,13 @@ export default function ServicesPage() {
                 </Button>
               </Link>
             </div>
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
           </div>
 
           {/* Setup Module */}
           <div className="md:col-span-5 bg-surface-low p-12 rounded-xl shadow-revenue flex flex-col justify-between border border-surface-high">
             <div>
               <div className="flex items-center gap-3 mb-12">
-                <span className="bg-primary/10 text-primary px-3 py-1 text-[10px] font-black rounded uppercase">Setup</span>
+                <span className="bg-surface-low text-primary px-3 py-1 text-[10px] font-black rounded uppercase">Setup</span>
                 <span className="text-text-muted font-bold tracking-widest text-[10px] uppercase">Strategic Architecture</span>
               </div>
               <h2 className="text-4xl font-bold tracking-tight text-primary mb-6">Demand Gen Setup</h2>
@@ -137,12 +136,11 @@ export default function ServicesPage() {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square bg-primary rounded-2xl overflow-hidden shadow-revenue relative">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,144,224,0.4),transparent)]"></div>
+            <div className="aspect-square bg-surface-low border border-surface-high rounded-2xl overflow-hidden shadow-revenue relative">
               <div className="absolute inset-0 flex flex-col justify-end p-12">
-                <div className="bg-white/10 backdrop-blur-xl p-8 rounded-xl border border-white/20">
-                  <h4 className="text-2xl font-bold text-white mb-2">Architectural Logic</h4>
-                  <p className="text-white/60 text-sm">Every module is built to interact. Your tech layer feeds your data support, which fuels your talent deployment.</p>
+                <div className="bg-white p-8 rounded-xl border border-surface-high">
+                  <h4 className="text-2xl font-bold text-primary mb-2">Architectural Logic</h4>
+                  <p className="text-text-muted text-sm">Every module is built to interact. Your tech layer feeds your data support, which fuels your talent deployment.</p>
                 </div>
               </div>
             </div>

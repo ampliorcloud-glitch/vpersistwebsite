@@ -6,7 +6,7 @@ export default function AcademyPage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <header className="pt-48 pb-32 px-8 max-w-7xl mx-auto text-center">
-        <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary font-black text-[10px] tracking-widest uppercase mb-8 rounded-full border border-secondary/20">
+        <span className="inline-block px-4 py-1.5 bg-surface-low text-secondary font-black text-[10px] tracking-widest uppercase mb-8 rounded-full border border-surface-high">
           The School of Persistence
         </span>
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-primary leading-[0.9] mb-10 max-w-5xl mx-auto">
@@ -36,7 +36,7 @@ export default function AcademyPage() {
                   { title: "Revenue Infrastructure Mastery", phase: "Wk 05-08" },
                   { title: "Advanced Lead-to-Revenue Logic", phase: "Wk 09-12" }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-6 bg-white border border-surface-high rounded-xl shadow-revenue group hover:border-secondary transition-all">
+                  <div key={idx} className="flex items-center justify-between p-6 bg-white border border-surface-high rounded-xl shadow-revenue group hover:border-primary transition-all">
                     <div className="flex items-center gap-4">
                       <span className="text-xs font-black text-secondary tracking-widest uppercase">{item.phase}</span>
                       <span className="text-xl font-black text-primary">{item.title}</span>
@@ -47,20 +47,20 @@ export default function AcademyPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-6"></div>
-              <div className="relative bg-primary p-12 rounded-2xl shadow-revenue">
-                <h3 className="text-2xl font-black text-white mb-8 italic">"The vPersist Certification"</h3>
-                <p className="text-white/60 mb-10 leading-relaxed text-sm">
+              <div className="absolute inset-0 bg-surface-low rounded-3xl -rotate-6"></div>
+              <div className="relative bg-white p-12 rounded-2xl shadow-revenue">
+                <h3 className="text-2xl font-black text-primary mb-8 italic">"The vPersist Certification"</h3>
+                <p className="text-text-muted mb-10 leading-relaxed text-sm">
                   Graduates are certified in the <strong>Revenue Pilot Method</strong>, ensuring they can execute high-stakes diagnostic periods with 100% precision.
                 </p>
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="p-4 bg-white/5 rounded border border-white/10 text-center">
+                  <div className="p-4 bg-surface-low rounded border border-surface-high text-center">
                     <span className="block text-3xl font-black text-secondary mb-2">92%</span>
-                    <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Pilot Success Rate</span>
+                    <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest">Pilot Success Rate</span>
                   </div>
-                  <div className="p-4 bg-white/5 rounded border border-white/10 text-center">
+                  <div className="p-4 bg-surface-low rounded border border-surface-high text-center">
                     <span className="block text-3xl font-black text-secondary mb-2">140+</span>
-                    <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Graduates Placed</span>
+                    <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest">Graduates Placed</span>
                   </div>
                 </div>
               </div>
@@ -97,7 +97,6 @@ export default function AcademyPage() {
       {/* Applied Pilot CTA */}
       <section className="py-24 px-8">
         <div className="max-w-5xl mx-auto bg-primary rounded-[2rem] p-16 md:p-24 shadow-revenue relative overflow-hidden flex flex-col items-center text-center">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-none">Ready to upgrade <br/>your <span className="text-secondary">career trajectory?</span></h2>
           <Button variant="tertiary" size="lg" glow className="px-16 py-6 text-xl">Apply to Academy</Button>
           <p className="mt-8 text-white/40 text-[10px] font-bold uppercase tracking-[0.2em]">Next Cohort Starts June 2024</p>

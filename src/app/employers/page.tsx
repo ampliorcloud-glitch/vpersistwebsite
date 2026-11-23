@@ -9,7 +9,7 @@ export default function EmployersPage() {
       <section className="relative px-8 py-24 md:py-32 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="z-10">
-            <span className="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-widest uppercase bg-secondary/10 text-secondary rounded-full">For Ambitious Employers</span>
+            <span className="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-widest uppercase bg-surface-low text-secondary rounded-full">For Ambitious Employers</span>
             <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-primary leading-[0.9] mb-8">
               Not Ready for <br/>Long-Term Hiring? <span className="text-secondary">Start with a Pilot.</span>
             </h1>
@@ -32,18 +32,16 @@ export default function EmployersPage() {
           <div className="relative">
             {/* Architectural System Visual */}
             <div className="relative aspect-square w-full">
-              <div className="absolute inset-0 bg-primary rounded-3xl rotate-3 opacity-5"></div>
-              <div className="absolute inset-0 bg-secondary rounded-3xl -rotate-3 opacity-5"></div>
               <div className="relative h-full w-full p-8 grid grid-cols-2 gap-4">
-                <div className="bg-white p-6 rounded-xl shadow-revenue border-l-4 border-secondary flex flex-col justify-end">
+                <div className="bg-white p-6 rounded-xl shadow-revenue border border-surface-high flex flex-col justify-end">
                   <span className="material-symbols-outlined text-4xl text-secondary mb-4">insights</span>
                   <div className="text-2xl font-black tracking-tight leading-none text-primary">ROI Validation</div>
                 </div>
-                <div className="bg-primary p-6 rounded-xl shadow-revenue flex flex-col justify-end">
-                  <span className="material-symbols-outlined text-4xl text-white mb-4">speed</span>
-                  <div className="text-2xl font-black tracking-tight leading-none text-white">Rapid Setup</div>
+                <div className="bg-white p-6 rounded-xl shadow-revenue flex flex-col justify-end">
+                  <span className="material-symbols-outlined text-4xl text-primary mb-4">speed</span>
+                  <div className="text-2xl font-black tracking-tight leading-none text-primary">Rapid Setup</div>
                 </div>
-                <div className="col-span-2 bg-white p-8 rounded-xl shadow-revenue border-t-4 border-primary flex flex-col justify-between">
+                <div className="col-span-2 bg-white p-8 rounded-xl shadow-revenue border border-surface-high flex flex-col justify-between">
                   <div className="flex justify-between items-start">
                     <span className="material-symbols-outlined text-4xl text-primary">groups</span>
                     <div className="text-right">
@@ -98,7 +96,7 @@ export default function EmployersPage() {
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-12">
                   <span className="material-symbols-outlined text-5xl text-secondary">rocket_launch</span>
-                  <span className="bg-amber-500 text-white px-4 py-1 text-[10px] font-black rounded-full tracking-widest uppercase">Most Requested</span>
+                  <span className="bg-white text-primary px-4 py-1 text-[10px] font-black rounded-full tracking-widest uppercase">Most Requested</span>
                 </div>
                 <h3 className="text-4xl font-black tracking-tight mb-6 leading-none">3-Month Pilot</h3>
                 <p className="text-white/60 text-lg max-w-sm mb-12 italic leading-relaxed">
@@ -116,12 +114,11 @@ export default function EmployersPage() {
               <Link href="/contact?interest=pilot">
                 <Button variant="tertiary" size="lg" className="w-full py-5 text-xl" glow>Apply for a Pilot</Button>
               </Link>
-              <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
             </div>
             
             {/* Setup & Ongoing Verticals */}
             <div className="md:col-span-5 flex flex-col gap-6">
-              <div className="bg-surface-low border border-surface-high rounded-2xl p-10 flex flex-col justify-between flex-grow shadow-revenue border-l-8 border-secondary">
+              <div className="bg-surface-low border border-surface-high rounded-2xl p-10 flex flex-col justify-between flex-grow shadow-revenue border border-surface-high">
                 <div>
                   <span className="material-symbols-outlined text-4xl text-secondary mb-6">hub</span>
                   <h3 className="text-2xl font-black tracking-tight mb-4 text-primary">Full Demand Gen Setup</h3>

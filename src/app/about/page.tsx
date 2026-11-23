@@ -19,7 +19,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="md:col-span-4 hidden md:block">
-            <div className="p-8 border-l-4 border-secondary bg-surface-low shadow-revenue">
+            <div className="p-8 border border-surface-high bg-surface-low shadow-revenue">
               <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-4">Core Thesis</p>
               <p className="text-text-muted italic leading-relaxed text-sm">
                 "Precision in hiring is the only hedge against market unpredictability. We don't just fill seats; we engineer persistence."
@@ -30,28 +30,27 @@ export default function AboutPage() {
       </header>
 
       {/* Evolution Section */}
-      <section className="bg-primary text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,144,224,0.2),transparent)]"></div>
+      <section className="bg-surface-low text-primary py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="mb-20">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-white">Our Evolution</h2>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-primary">Our Evolution</h2>
             <div className="h-1 w-24 bg-secondary"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-surface-high">
             {[
               { step: "01", title: "Strategic Staffing", desc: "The origins. Identifying high-caliber talent for hyper-growth startups. We realized talent wasn't the bottleneck—integration was.", progress: "1/3" },
               { step: "02", title: "Growth Advisory", desc: "Moving beyond heads. We began designing the playbooks, the KPIs, and the compensation models that made talent actually perform.", progress: "2/3" },
               { step: "03", title: "Revenue Talent Platform", desc: "A full-stack architecture. RTaaS (Revenue Talent as a Service) combines precision hiring with the operational structure needed to scale.", progress: "3/3", current: true }
             ].map((phase, idx) => (
-              <div key={idx} className={`p-12 bg-white/5 border-b md:border-b-0 md:border-r border-white/10 group hover:bg-white/10 transition-colors relative`}>
+              <div key={idx} className={`p-12 bg-white border-b md:border-b-0 md:border-r border-surface-high group hover:bg-surface-low transition-colors relative`}>
                 <div className="text-secondary text-5xl font-black mb-8 opacity-40 group-hover:opacity-100 transition-opacity">{phase.step}</div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{phase.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-primary">{phase.title}</h3>
                 {phase.current && <span className="bg-secondary text-white text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded absolute top-12 right-12">Current State</span>}
-                <p className="text-white/60 leading-relaxed mb-12 text-sm">
+                <p className="text-text-muted leading-relaxed mb-12 text-sm">
                   {phase.desc}
                 </p>
                 <div className="flex flex-col gap-2">
-                  <div className="h-1 w-full bg-white/10"></div>
+                  <div className="h-1 w-full bg-white"></div>
                   <div className={`h-1 bg-secondary ${idx === 0 ? 'w-1/3' : idx === 1 ? 'w-2/3' : 'w-full'}`}></div>
                 </div>
               </div>
@@ -87,19 +86,18 @@ export default function AboutPage() {
             </div>
             {/* System Visual */}
             <div className="w-full md:w-1/2 relative aspect-square">
-              <div className="absolute inset-0 bg-secondary/5 rounded-full blur-3xl"></div>
               <div className="relative z-10 grid grid-cols-2 gap-4 h-full p-4">
                 <div className="flex flex-col gap-4 justify-end">
                   <div className="h-32 w-full bg-surface-low rounded-xl shadow-revenue border border-surface-high flex items-center justify-center">
                     <span className="material-symbols-outlined text-primary text-4xl">architecture</span>
                   </div>
-                  <div className="h-64 w-full bg-primary rounded-xl shadow-revenue flex items-center justify-center p-8 text-center border-t-8 border-secondary">
-                    <span className="text-white font-black text-xl tracking-tighter uppercase">Infrastructure Layer</span>
+                  <div className="h-64 w-full bg-white rounded-xl shadow-revenue flex items-center justify-center p-8 text-center border border-surface-high">
+                    <span className="text-primary font-black text-xl tracking-tighter uppercase">Infrastructure Layer</span>
                   </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <div className="h-64 w-full bg-secondary rounded-xl shadow-revenue flex items-center justify-center p-8 text-center">
-                    <span className="text-white font-black text-xl tracking-tighter uppercase">Execution Talent</span>
+                  <div className="h-64 w-full bg-white border border-surface-high rounded-xl shadow-revenue flex items-center justify-center p-8 text-center">
+                    <span className="text-primary font-black text-xl tracking-tighter uppercase">Execution Talent</span>
                   </div>
                   <div className="h-32 w-full bg-surface-low rounded-xl shadow-revenue border border-surface-high flex items-center justify-center">
                     <span className="material-symbols-outlined text-secondary text-4xl">trending_up</span>
@@ -124,8 +122,8 @@ export default function AboutPage() {
               { icon: "bolt", title: "Execution", desc: "Strategy is worthless without high-velocity movement. We focus on the daily actions that compound into massive results.", color: "secondary" },
               { icon: "grid_view", title: "Structure", desc: "Growth without structure is chaos. We provide the architectural framework that allows your business to scale without breaking.", color: "primary" }
             ].map((val, idx) => (
-              <div key={idx} className="bg-white p-12 shadow-revenue border-t-8 border-surface-high hover:border-secondary transition-all group">
-                <div className={`w-16 h-16 ${val.color === 'primary' ? 'bg-primary/5 text-primary' : 'bg-secondary/5 text-secondary'} rounded-full flex items-center justify-center mb-10`}>
+              <div key={idx} className="bg-white p-12 shadow-revenue border border-surface-high hover:border-primary transition-all group">
+                <div className={`w-16 h-16 ${val.color === 'primary' ? 'bg-surface-low text-primary' : 'bg-surface-low text-secondary'} rounded-full flex items-center justify-center mb-10`}>
                   <span className="material-symbols-outlined text-3xl">{val.icon}</span>
                 </div>
                 <h3 className="text-2xl font-black text-primary mb-4">{val.title}</h3>
@@ -138,7 +136,6 @@ export default function AboutPage() {
 
       {/* Final CTA */}
       <section className="bg-primary py-32 text-center text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(0,144,224,0.4),transparent)]"></div>
         <div className="max-w-4xl mx-auto px-8 relative z-10">
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-[0.9]">Build Your Revenue <br/>Cockpit Today.</h2>
           <p className="text-white/60 text-xl mb-12 font-medium italic">"The 3-Month Pilot starts with a single audit. No long-term commitment, just results."</p>

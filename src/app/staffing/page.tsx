@@ -70,20 +70,19 @@ export default function StaffingPage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="aspect-square bg-gradient-to-br from-primary to-primary/80 rounded-3xl overflow-hidden shadow-revenue relative group">
-                <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-                <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20">
+              <div className="aspect-square bg-surface-low border border-surface-high rounded-3xl overflow-hidden shadow-revenue relative group">
+                <div className="absolute inset-0 bg-surface-low mix-blend-overlay"></div>
+                <div className="absolute bottom-8 left-8 right-8 p-6 bg-surface-low backdrop-blur-xl rounded-2xl border border-surface-high">
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shadow-revenue">
                       <span className="material-symbols-outlined text-black font-black">verified_user</span>
                     </div>
                     <div>
-                      <div className="text-white font-bold">98% Success Rate</div>
-                      <div className="text-white/70 text-xs uppercase tracking-widest">Pilot-to-Deployment Transition</div>
+                      <div className="text-primary font-bold">98% Success Rate</div>
+                      <div className="text-text-muted text-xs uppercase tracking-widest">Pilot-to-Deployment Transition</div>
                     </div>
                   </div>
-                  <div className="h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
+                  <div className="h-1.5 w-full bg-surface-low rounded-full overflow-hidden">
                     <motion.div 
                       initial={{ width: 0 }}
                       whileInView={{ width: "98%" }}
@@ -93,8 +92,6 @@ export default function StaffingPage() {
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-secondary opacity-20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-primary opacity-10 rounded-full blur-3xl"></div>
             </motion.div>
           </div>
         </div>
@@ -126,10 +123,10 @@ export default function StaffingPage() {
                 viewport={{ once: true }}
                 variants={cardVariants}
                 whileHover={{ y: -10 }}
-                className="bg-white p-8 rounded-2xl shadow-revenue hover:shadow-xl transition-all border-b-4 border-transparent hover:border-secondary group relative overflow-hidden h-full flex flex-col"
+                className="bg-white p-8 rounded-2xl shadow-revenue hover:shadow-xl transition-all border border-surface-high hover:border-primary group relative overflow-hidden h-full flex flex-col"
               >
-                {option.badge && <div className="absolute top-0 right-0 bg-secondary text-black text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-lg">{option.badge}</div>}
-                <div className="w-14 h-14 bg-surface-low rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary/10 transition-colors">
+                {option.badge && <div className="absolute top-0 right-0 bg-secondary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-lg">{option.badge}</div>}
+                <div className="w-14 h-14 bg-surface-low rounded-xl flex items-center justify-center mb-8 group-hover:bg-surface-high transition-colors">
                   <span className="material-symbols-outlined text-primary group-hover:text-secondary text-3xl">{option.icon}</span>
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">{option.title}</h3>
@@ -178,14 +175,14 @@ export default function StaffingPage() {
               </thead>
               <tbody>
                 <motion.tr whileHover={{ scale: 1.01 }} className="bg-surface-low rounded-2xl cursor-default group transition-colors hover:bg-surface-high">
-                  <td className="px-8 py-8 rounded-l-2xl border-l-4 border-secondary">
+                  <td className="px-8 py-8 rounded-l-2xl border border-surface-high">
                     <span className="font-black text-primary text-xl">3-Month Pilot</span>
                   </td>
                   <td className="px-8 py-8 text-text-muted font-bold tracking-tight">Validate Fit & Signal</td>
                   <td className="px-8 py-8 rounded-r-2xl text-text-muted font-black uppercase tracking-widest text-[10px]">Short-term Modular</td>
                 </motion.tr>
                 <motion.tr whileHover={{ scale: 1.01 }} className="bg-surface-low rounded-2xl cursor-default group transition-colors hover:bg-surface-high">
-                  <td className="px-8 py-8 rounded-l-2xl border-l-4 border-primary">
+                  <td className="px-8 py-8 rounded-l-2xl border border-surface-high">
                     <span className="font-black text-primary text-xl">6-Month Engagement</span>
                   </td>
                   <td className="px-8 py-8 text-text-muted font-bold tracking-tight">Scale Revenue Output</td>
@@ -199,7 +196,6 @@ export default function StaffingPage() {
 
       {/* CTA Final */}
       <section className="py-24 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,144,224,0.15),transparent)]"></div>
         <div className="max-w-4xl mx-auto px-8 relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-none">
             Ready to deploy?

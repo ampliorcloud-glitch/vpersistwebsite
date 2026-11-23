@@ -98,7 +98,7 @@ function ContactFormContent() {
 
             <div className="space-y-12">
               <div className="flex items-start gap-6 group">
-                <div className="w-14 h-14 flex items-center justify-center bg-surface-low border border-surface-high rounded-xl text-primary shadow-revenue group-hover:border-secondary transition-colors">
+                <div className="w-14 h-14 flex items-center justify-center bg-surface-low border border-surface-high rounded-xl text-primary shadow-revenue group-hover:border-primary transition-colors">
                   <span className="material-symbols-outlined text-2xl">mail</span>
                 </div>
                 <div>
@@ -111,7 +111,7 @@ function ContactFormContent() {
               </div>
 
               <div className="flex items-start gap-6 group">
-                <div className="w-14 h-14 flex items-center justify-center bg-surface-low border border-surface-high rounded-xl text-primary shadow-revenue group-hover:border-secondary transition-colors">
+                <div className="w-14 h-14 flex items-center justify-center bg-surface-low border border-surface-high rounded-xl text-primary shadow-revenue group-hover:border-primary transition-colors">
                   <span className="material-symbols-outlined text-2xl">location_on</span>
                 </div>
                 <div>
@@ -232,7 +232,7 @@ function ContactFormContent() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center h-full text-center py-20"
                 >
-                  <div className="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center text-secondary mb-8">
+                  <div className="w-24 h-24 bg-surface-low rounded-full flex items-center justify-center text-secondary mb-8">
                     <motion.span 
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -261,14 +261,14 @@ function ContactFormContent() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="relative group">
-              <div className="absolute -inset-6 bg-secondary/5 rounded-3xl group-hover:bg-secondary/10 transition-colors duration-500"></div>
-              <div className="aspect-video bg-primary-container/20 rounded-2xl overflow-hidden shadow-revenue relative">
+              <div className="absolute -inset-6 bg-surface-low rounded-3xl group-hover:bg-surface-high transition-colors duration-500"></div>
+              <div className="aspect-video bg-surface-low rounded-2xl overflow-hidden shadow-revenue relative">
                 <img 
                   src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
                   alt="vPersist HQ" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
-                <div className="absolute bottom-8 left-8 bg-white p-6 rounded-2xl shadow-revenue border-l-8 border-secondary max-w-xs">
+                <div className="absolute bottom-8 left-8 bg-white p-6 rounded-2xl shadow-revenue border border-surface-high max-w-xs">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="material-symbols-outlined text-secondary text-sm">verified</span>
                     <span className="text-[10px] font-black uppercase tracking-widest text-primary">Headquarters</span>
@@ -283,11 +283,11 @@ function ContactFormContent() {
                 "While our technology operates globally, our heart is in San Francisco. We host strategic revenue workshops and pilot deep-dives for our core partners on-site."
               </p>
               <div className="grid grid-cols-2 gap-8">
-                <div className="p-8 bg-white rounded-2xl border border-surface-high shadow-revenue group hover:border-secondary transition-all">
+                <div className="p-8 bg-white rounded-2xl border border-surface-high shadow-revenue group hover:border-primary transition-all">
                   <h4 className="text-[10px] font-black uppercase tracking-tighter text-secondary mb-2">Timezone</h4>
                   <p className="text-xl font-black text-primary">Pacific Standard</p>
                 </div>
-                <div className="p-8 bg-white rounded-2xl border border-surface-high shadow-revenue group hover:border-secondary transition-all">
+                <div className="p-8 bg-white rounded-2xl border border-surface-high shadow-revenue group hover:border-primary transition-all">
                   <h4 className="text-[10px] font-black uppercase tracking-tighter text-secondary mb-2">Status</h4>
                   <p className="text-xl font-black text-primary">Operational</p>
                 </div>
