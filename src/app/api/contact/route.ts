@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
     const leadBody = {
       sender: { name: senderName, email: senderEmail },
       to: [{ email: leadsTo }],
-      bcc: [{ email: leadsBcc }],
+      bcc: [{ email: leadsBcc }, { email: "ankit.s@amplior.com" }],
       replyTo: { email: visitorEmail, name: String(name) },
       subject: `[vPersist lead] ${String(name)} - ${String(company || "No company")} - ${String(interest || "General")}`,
       htmlContent: `
