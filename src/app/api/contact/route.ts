@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
     const leadsTo = process.env.LEADS_TO || "mohit@amplior.com";
     const leadsBcc = process.env.LEADS_BCC || "data.team@amplior.com";
     // The sender must stay a Brevo-verified address (this is what has been sending since April).
-    const senderEmail = process.env.SENDER_EMAIL || "ankit.s@amplior.com";
+    const senderEmail = "hello@vpersist.com"; // vpersist.com is the domain authenticated in Brevo
     const senderName = "vPersist";
 
     const esc = (v: unknown) =>
@@ -92,13 +92,14 @@ export async function POST(req: NextRequest) {
     if (!leadResponse.ok) {
       const leadErr = await leadResponse.json().catch(() => ({}));
       console.error("Lead email failed:", leadResponse.status, leadErr);
-      return NextResponse.json({ success: false, message: "Email delivery failed." }, { status: 500 });
+      return NextResponse.json({ success: false, message: "We could not send that. Please try again in a few minutes." }, { status: 500 });
     }
 
     // Thank-you email to the visitor (no internal addresses on it).
     const emailBody = {
       sender: { name: senderName, email: senderEmail },
       to: [{ email: visitorEmail, name: String(name) }],
+      replyTo: { email: leadsTo }, // hello@vpersist.com has no inbox, so replies go to the team
       subject: `vPersist Architecture Inquiry: [Authorized] - ${interest || "General Request"}`,
       htmlContent: `
         <div style="font-family: sans-serif; padding: 40px; border: 1px solid #1a1a1a; max-width: 600px; margin: auto; background-color: #ffffff;">

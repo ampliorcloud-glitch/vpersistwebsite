@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { useSearchParams } from "next/navigation";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 // Form Schema
 const contactSchema = z.object({
@@ -39,6 +39,12 @@ function ContactFormContent() {
     },
   });
 
+  const turnstileRef = useRef<TurnstileInstance>(null);
+  // A captcha pass works once, so every failed send needs a new one.
+  const newCaptcha = () => {
+    setTurnstileToken("");
+    turnstileRef.current?.reset();
+  };
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -63,6 +69,7 @@ function ContactFormContent() {
         const errorText = await response.text();
         console.error("Non-JSON response from server:", errorText);
         setErrorMessage("Network infrastructure error (403/Forbidden). Please check your domain connection.");
+        newCaptcha();
         return;
       }
 
@@ -75,9 +82,11 @@ function ContactFormContent() {
       } else {
         setErrorMessage(result.message || "Security verification failed.");
         if (result.debug) console.warn("Diagnostic codes:", result.debug);
+        newCaptcha();
       }
     } catch (error) {
-      setErrorMessage("System error. Please try again or contact hello@vpersist.com directly.");
+      setErrorMessage("System error. Please try again in a few minutes.");
+      newCaptcha();
       console.error("Submission crash:", error);
     }
   };
@@ -200,7 +209,8 @@ function ContactFormContent() {
 
                       {/* Turnstile Widget */}
                       <div className="flex justify-center md:justify-start">
-                        <Turnstile 
+                        <Turnstile
+                          ref={turnstileRef}
                           siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""} 
                           onSuccess={(token) => setTurnstileToken(token)}
                           onExpire={() => setTurnstileToken("")}
